@@ -1,0 +1,49 @@
+:root {
+  /* Backgrounds */
+  --background: #0B0F14;
+  --background-secondary: #111827;
+  --surface: #1A2330;
+  --surface-elevated: #263445;
+
+  /* Brand */
+  --brand: #2CB5A0;
+  --brand-light: #6EE7D8;
+
+  /* Text */
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* Effects */
+  --shadow-glow: 0 0 30px rgba(44, 181, 160, 0.15);
+
+  /* Radius */
+  --radius-lg: 1rem;
+}
+
+.bg-brand {
+  background-color: var(--brand);
+}
+
+.bg-brand-light {
+  background-color: var(--brand-light);
+}
+
+.hover\:bg-brand-light:hover {
+  background-color: var(--brand-light);
+}
+
+.hover\:text-brand:hover {
+  color: var(--brand);
+}
+
+.hover\:text-primary:hover {
+  color: var(--text-primary);
+}
+
+.hover\:border-brand:hover {
+  border-color: var(--brand);
+}
