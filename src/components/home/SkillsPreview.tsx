@@ -1,14 +1,17 @@
+import { homeContent } from "../../data/home";
 import { skillGroups } from "../../data/skills";
 
 function SkillsPreview() {
+  const { skillsPreview } = homeContent;
+
   return (
     <section className="border-default border-t py-12">
       <p className="text-brand text-sm uppercase tracking-[0.3em]">
-        Technical Skills
+        {skillsPreview.eyebrow}
       </p>
 
       <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
-        Tools I use to build reliable digital experiences.
+        {skillsPreview.heading}
       </h2>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
