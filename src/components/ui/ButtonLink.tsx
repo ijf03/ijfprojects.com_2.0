@@ -11,9 +11,8 @@ function ButtonLink({ to, children, variant = "primary" }: ButtonLinkProps) {
     "rounded-full px-6 py-3 text-center font-semibold transition";
 
   const variants = {
-    primary: "bg-brand hover:bg-brand-light text-black",
-    secondary:
-      "border border-default text-primary hover:border-brand hover:text-brand",
+    primary: "bg-brand hover:bg-brand-light text-black hover:shadow-[0_0_30px_rgba(44,181,160,0.25)] hover:-translate-y-0.5",
+    secondary: "border border-default text-primary hover:border-brand hover:text-brand hover:-translate-y-0.5",
   };
 
   return (
