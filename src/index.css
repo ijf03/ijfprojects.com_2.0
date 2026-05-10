@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "./styles/theme.css";
-
 html,
 body,
 #root {
@@ -8,6 +7,8 @@ body,
   min-height: 100%;
   margin: 0;
   padding: 0;
+
+  overflow-x: hidden;
 
   background: var(--background);
   color: var(--text-primary);
@@ -115,6 +116,11 @@ img {
   left: 35%;
   animation-delay: 4s;
 }
+
+canvas {
+  display: block;
+}
+
 
 @keyframes pulse-core {
   0%,

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Route } from "react-router-dom";
 
 import Layout from "../components/layout/Layout";
 import HomePage from "../pages/HomePage";
@@ -8,6 +8,7 @@ import ProjectDetailPage from "../pages/ProjectDetailPage";
 import ResumePage from "../pages/ResumePage";
 import ContactPage from "../pages/ContactPage";
 import ExperiencePage from "../pages/ExperiencePage";
+import WorldPage from "../pages/WorldPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "resume", element: <ResumePage /> },
       { path: "contact", element: <ContactPage /> },
       { path: "experience", element: <ExperiencePage /> },
+      { path: "world", element: <WorldPage /> },
     ],
   },
 ]);
