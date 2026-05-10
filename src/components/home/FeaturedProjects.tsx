@@ -25,7 +25,7 @@ function FeaturedProjects() {
         </ButtonLink>
       </div>
 
-      <div className="mt-8 grid gap-5 md:grid-cols-3">
+      <div className="mt-8 grid items-stretch gap-5 md:grid-cols-3">
         {featured.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
