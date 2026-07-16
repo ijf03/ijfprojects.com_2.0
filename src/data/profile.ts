@@ -1,5 +1,6 @@
 export const profile = {
   name: "Isabelle Fernan",
+  preferredName: "Sabi",
   initials: "IJF",
   role: "Software Developer",
   location: "Melbourne, Australia",
@@ -9,4 +10,4 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ijf03/",
 
   resumeUrl: "/Isabelle_Fernan_Resume.pdf",
-};
+} as const;

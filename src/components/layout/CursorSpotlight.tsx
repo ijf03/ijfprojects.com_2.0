@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import "./CursorSpotlight.css";
 
 function CursorSpotlight() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const spotlightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleMouseMove(event: MouseEvent) {
-      setPosition({
-        x: event.clientX,
-        y: event.clientY,
-      });
+      const spotlight = spotlightRef.current;
+      if (!spotlight) return;
+
+      spotlight.style.setProperty("--spotlight-x", `${event.clientX}px`);
+      spotlight.style.setProperty("--spotlight-y", `${event.clientY}px`);
     }
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -20,14 +22,9 @@ function CursorSpotlight() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0 hidden md:block"
-      style={{
-        background: `radial-gradient(
-            220px circle at ${position.x}px ${position.y}px,
-            rgba(168, 85, 247, 0.10),
-            transparent 35%
-        )`,
-      }}
+      ref={spotlightRef}
+      aria-hidden="true"
+      className="cursor-spotlight pointer-events-none fixed inset-0 z-0 hidden md:block"
     />
   );
 }

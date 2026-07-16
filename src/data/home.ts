@@ -4,7 +4,7 @@ export const homeContent = {
     heading:
       "Building thoughtful web applications, interactive systems, and digital experiences.",
     description:
-      "I'm Isabelle Fernan, a software development student and developer based in Melbourne, with experience across full-stack web development, game development, emerging technology, and creative digital work.",
+      "I'm Isabelle Fernan, a software development student based in Melbourne. I work across full-stack development, game development, emerging technology, and creative digital experiences.",
     primaryButton: {
       label: "View Projects",
       path: "/projects",
@@ -26,4 +26,11 @@ export const homeContent = {
     buttonLabel: "View All Projects",
     buttonPath: "/projects",
   },
-};
+
+  experiencePreview: {
+    eyebrow: "Experience",
+    heading: "Technical work supported by leadership and communication.",
+    buttonLabel: "View Experience",
+    buttonPath: "/experience",
+  },
+} as const;

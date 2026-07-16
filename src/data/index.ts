@@ -1,0 +1,9 @@
+export { about } from "./about";
+export { community } from "./community";
+export { contact } from "./contact";
+export { education } from "./education";
+export { experiences } from "./experience";
+export { homeContent } from "./home";
+export { profile } from "./profile";
+export { projects } from "./projects";
+export { skillGroups } from "./skills";

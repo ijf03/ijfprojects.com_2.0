@@ -1,0 +1,11 @@
+.cursor-spotlight {
+    --spotlight-x: 50vw;
+    --spotlight-y: 50vh;
+  
+    background: radial-gradient(
+      220px circle at var(--spotlight-x) var(--spotlight-y),
+      rgb(var(--spotlight-rgb) / 10%),
+      transparent 35%
+    );
+  }
+  

@@ -20,6 +20,7 @@ function ResumePage() {
 
         <a
           href={profile.resumeUrl}
+          download
           className="bg-brand hover:bg-brand-light rounded-full px-6 py-3 text-center font-semibold text-black transition"
         >
           Download Resume
