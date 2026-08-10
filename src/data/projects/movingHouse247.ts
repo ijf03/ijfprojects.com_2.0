@@ -3,30 +3,53 @@ import type { Project } from "../../types/project";
 export const movingHouse247 = {
   slug: "moving-house-247",
   title: "Moving House 24/7",
-  type: "Business Operations and CMS Platform",
+  tagline:
+    "A digital booking, operations, and content-management platform for a Victorian removals business.",
+  type: "Business Operations and Custom CMS Platform",
   year: "2026",
+  completedDate: "June 2026",
   featured: true,
   status: "Completed",
 
   shortDescription:
-    "A role-based booking and operations platform developed for a Victorian removals and storage business transitioning from paper-based processes.",
+    "A role-based platform that centralises customer enquiries, bookings, payments, staff scheduling, job allocation, and website content management.",
 
-  overview:
-    "Moving House 24/7 is a full-stack web platform that centralises customer enquiries, bookings, communication, invoices, payments, staff scheduling, job allocation, and administrative workflows.",
-
-  client: "Moving House 24/7",
-  role: "UI/UX Designer and Frontend Developer",
-  duration: "University industry project",
-  team: ["Nine-person multidisciplinary student team"],
-  categories: [
-    "Full-stack Development",
-    "UI/UX Design",
-    "Business Systems",
-    "Custom CMS",
-    "Client Project",
+  introduction: [
+    "Moving House 24/7 is a full-stack web platform developed for a real removals and storage business in Victoria. The client previously relied heavily on paper records, folders, and manual communication to manage customers, bookings, jobs, staff, invoices, and business resources.",
+    "Our team designed and developed one connected system for the public website, customer portal, staff operations, and administrative management. It also includes a custom CMS that allows authorised users to update public website information without editing the application code.",
   ],
 
-  stack: [
+  disciplines: ["UI/UX Design", "Frontend Development", "Full-stack Development"],
+
+  roles: [
+    "UI/UX Designer",
+    "Frontend Developer",
+    "Content Designer",
+  ],
+
+  responsibilities: [
+    "Designed the public website, customer portal, staff interfaces, and administrative dashboard",
+    "Translated business requirements and backend workflows into clear user journeys",
+    "Created responsive layouts, forms, tables, navigation, status indicators, and reusable interface patterns",
+    "Designed and implemented the custom CMS interfaces for managing public website content",
+    "Worked with backend developers to connect the frontend to CakePHP data, permissions, validation, and workflow logic",
+    "Applied usability and accessibility principles across desktop and mobile interfaces",
+    "Supported end-to-end testing and refinement across customer, staff, and administrator roles",
+  ],
+
+  client: "Moving House 24/7",
+  duration: "Two university development iterations",
+  team: ["Nine-person multidisciplinary student team"],
+
+  categories: [
+    "Client Project",
+    "Business Systems",
+    "Custom CMS",
+    "UI/UX Design",
+    "Full-stack Development",
+  ],
+
+  techStack: [
     "CakePHP",
     "PHP",
     "MySQL",
@@ -40,182 +63,357 @@ export const movingHouse247 = {
   ],
 
   features: [
+    "Custom CMS for managing public website content",
     "Role-based customer, staff, and administrator dashboards",
     "Online enquiry and booking workflows",
     "Customer portal with threaded messaging",
     "Booking approval and status management",
     "Invoice generation and Stripe payments",
     "Staff availability, scheduling, and job allocation",
-    "User, resource, and content management",
+    "User, resource, referral, and content management",
     "Responsive administrative interfaces",
     "Email notifications and form validation",
-    "Custom CMS for managing public website content",
   ],
 
-  coverImage: "/images/projects/moving-house-247/cover.png",
+  coverImage: "/images/projects/moving-house-247/moving-house-logo.png",
 
-  media: [
-    {
-      type: "image",
-      src: "/images/projects/moving-house-247/dashboard.png",
-      alt: "Moving House 24/7 administrative dashboard",
-      caption: "Role-based administrative dashboard",
-    },
-    {
-      type: "image",
-      src: "/images/projects/moving-house-247/customer-portal.png",
-      alt: "Moving House 24/7 customer booking portal",
-      caption: "Customer enquiry, booking, and communication portal",
-    },
-    {
-      type: "image",
-      src: "/images/projects/moving-house-247/bookings.png",
-      alt: "Moving House 24/7 booking management interface",
-      caption: "Booking management and approval workflow",
-    },
-  ],
-
-  links: {},
-
-  caseStudy: {
-    introduction:
-      "A real-client industry project focused on transforming disconnected, paper-based business processes into one accessible digital platform.",
-
-    problem: [
-      "The client relied heavily on paper records, folders, and manual communication to manage customers, bookings, jobs, staff, invoices, and resources.",
-      "Information was spread across separate processes, making it harder to track updates and maintain a consistent view of business operations.",
-      "The platform needed to support customers, staff members, and administrators without making the workflows confusing for users with different technical abilities.",
-    ],
-
-    goals: [
-      "Move customer enquiries and booking requests online",
-      "Centralise customer, booking, invoice, job, and resource information",
-      "Create clear workflows for customers, staff, and administrators",
-      "Support communication between customers and the business",
-      "Introduce staff scheduling and job allocation",
-      "Provide secure online payments",
-      "Ensure the system remained responsive and usable across devices",
-    ],
-
-    responsibilities: [
-      "Designed interfaces and page layouts across the public website, customer portal, staff system, and administrative dashboard",
-      "Translated business requirements and backend workflows into understandable user journeys",
-      "Created responsive tables, forms, navigation, status indicators, management pages, and threaded messaging interfaces",
-      "Worked with backend developers to connect frontend components to CakePHP data, permissions, validation, and application logic",
-      "Applied usability and accessibility principles throughout the interface",
-      "Supported testing and refinement of end-to-end workflows across different user roles",
-    ],
-
-    process: [
-      {
-        id: "requirements",
-        eyebrow: "01",
-        title: "Understanding the business",
-        paragraphs: [
-          "The project began by reviewing the client's existing processes and identifying the information each user role needed to access.",
-          "We translated the requirements into customer, staff, and administrator workflows rather than treating the platform as one generic dashboard.",
-        ],
-        highlights: [
-          "Mapped role-specific tasks and permissions",
-          "Identified dependencies between enquiries, bookings, invoices, jobs, and payments",
-          "Prioritised core workflows for the first development iteration",
-        ],
-      },
-      {
-        id: "interface-design",
-        eyebrow: "02",
-        title: "Designing role-based interfaces",
-        paragraphs: [
-          "I designed interfaces around the tasks each user needed to complete. Customer pages prioritised clear progress and communication, while administrative pages focused on efficient information management.",
-          "Reusable patterns were established for forms, responsive tables, status labels, actions, validation, and navigation so the system felt consistent across modules.",
-        ],
-        highlights: [
-          "Public website and information pages",
-          "Customer enquiry and booking portal",
-          "Administrative management screens",
-          "Staff availability and job interfaces",
-          "Mobile navigation and responsive tables",
-        ],
-      },
-      {
-        id: "implementation",
-        eyebrow: "03",
-        title: "Connecting design with application logic",
-        paragraphs: [
-          "The frontend needed to reflect real application state, permissions, and backend relationships. I worked closely with the development team to ensure interface actions aligned with CakePHP controllers, database records, and role restrictions.",
-          "Booking approvals, payment availability, message threads, job allocation, and status changes all depended on backend rules rather than being purely visual interactions.",
-        ],
-        highlights: [
-          "Integrated persistent application data",
-          "Handled role-based visibility and navigation",
-          "Added validation, feedback, and error states",
-          "Supported Stripe payment and reCAPTCHA workflows",
-        ],
-      },
-      {
-        id: "iteration",
-        eyebrow: "04",
-        title: "Expanding the operational system",
-        paragraphs: [
-          "The first iteration established the website, customer portal, administrative tools, booking flow, invoices, and payments.",
-          "The second iteration expanded the platform into internal operations through staff availability, scheduling, job allocation, referrals, resources, notifications, and reporting.",
-        ],
-        highlights: [
-          "Customer-facing services",
-          "Administrative workflows",
-          "Staff operations",
-          "Notifications and reporting",
-        ],
-      },
-    ],
-
-    challenges: [
-      {
-        title: "Designing for multiple user roles",
-        problem:
-          "Customers, staff, and administrators needed different information and actions, but all roles interacted with the same underlying bookings and jobs.",
-        solution:
-          "We created separate role-based navigation and dashboards while maintaining consistent interface patterns and status language throughout the platform.",
-      },
-      {
-        title: "Making complex data manageable",
-        problem:
-          "Administrative pages contained large amounts of booking, customer, invoice, and job information that could become difficult to scan on smaller screens.",
-        solution:
-          "I used responsive tables, clear visual hierarchy, filtering, search, status indicators, and focused actions to reduce clutter and support faster decision-making.",
-      },
-      {
-        title: "Aligning frontend behaviour with backend rules",
-        problem:
-          "Actions such as approval, payment, staff allocation, and messaging depended on permissions and workflow state.",
-        solution:
-          "I collaborated closely with backend developers and learned the data relationships so interface controls, messages, and available actions accurately reflected the current system state.",
-      },
-    ],
-
-    outcome: {
-      summary:
-        "The completed platform brought the client's main customer-facing and operational workflows into one connected system and established a scalable foundation for replacing manual records.",
-      highlights: [
-        "Centralised enquiry, booking, communication, invoice, payment, staff, and job information",
-        "Provided customers with an online portal for requests, updates, messages, and payments",
-        "Created role-based tools for administrators and staff",
-        "Reduced reliance on disconnected paper-based processes",
-        "Delivered a responsive system designed around real business workflows",
-      ],
-    },
-
-    learnings: [
-      "Good frontend work requires understanding the backend, data model, permissions, and business rules.",
-      "Role-based systems need clear boundaries while maintaining consistency across the overall product.",
-      "Information-heavy interfaces benefit from strong hierarchy, meaningful status feedback, and reusable interaction patterns.",
-      "Regular communication between design and development prevents interface decisions from becoming disconnected from technical constraints.",
-    ],
-
-    nextSteps: [
-      "Conduct further usability testing with the client's staff and customers",
-      "Continue improving operational reporting and analytics",
-      "Refine automation around notifications and recurring workflows",
+  heroGallery: {
+    layout: "featured-grid",
+    featuredIndex: 0,
+    items: [
+        {
+            type: "image",
+            src: "/images/projects/moving-house-247/hero.png",
+            alt: "Moving House 24/7",
+            caption: "Home page hero section",
+            aspectRatio: "landscape",
+        },
+        {
+            type: "image",
+            src: "/images/projects/moving-house-247/admin-dashboard.png",
+            alt: "Moving House 24/7 administrative dashboard",
+            caption: "Role-based administrative dashboard",
+            aspectRatio: "landscape",
+        },
+        {
+            type: "image",
+            src: "/images/projects/moving-house-247/resource-allocation.png",
+            alt: "Resource Allocation System",
+            caption: "Allocate resources to every job",
+            aspectRatio: "landscape",
+        },
+        {
+            type: "image",
+            src: "/images/projects/moving-house-247/Resource-management.png",
+            alt: "Resource Management System",
+            caption: "Manage the resources available to the company",
+            aspectRatio: "landscape",
+        },
+        {
+            type: "image",
+            src: "/images/projects/moving-house-247/trasnfer-service-form.png",
+            alt: "Transfer Service form for customers",
+            caption: "Customer side form",
+            aspectRatio: "landscape",
+        },
     ],
   },
+
+  links: [],
+
+  sections: [
+    {
+      id: "project-context",
+      number: "01",
+      title: "Project context",
+      details: [
+        {
+          label: "Users",
+          items: ["Customers", "Staff", "Administrators"],
+        },
+        {
+          label: "Scope",
+          items: [
+            "Public website",
+            "Customer portal",
+            "Operations platform",
+            "Custom CMS",
+          ],
+        },
+      ],
+      blocks: [
+        {
+          type: "text",
+          paragraphs: [
+            "The client needed to replace disconnected, paper-based processes with a central system that could support both customer-facing services and internal operations.",
+            "Because customers, staff members, and administrators interacted with the same bookings and jobs in different ways, the platform needed clear role boundaries without feeling like several unrelated products.",
+          ],
+        },
+        {
+          type: "list",
+          title: "Project goals",
+          columns: 2,
+          items: [
+            "Move enquiries and booking requests online",
+            "Centralise customer, booking, invoice, job, and resource information",
+            "Support customer and staff communication",
+            "Introduce staff availability and job allocation",
+            "Provide secure online payments",
+            "Allow administrators to manage public website content",
+            "Create responsive and accessible interfaces",
+          ],
+        },
+      ],
+    },
+    {
+      id: "research-and-workflows",
+      number: "02",
+      title: "Understanding the business workflows",
+      blocks: [
+        {
+          type: "text",
+          paragraphs: [
+            "We began by reviewing the client's existing processes and identifying the information and actions required by each user role. The team mapped dependencies between enquiries, bookings, invoices, payments, staff availability, and jobs before building the interfaces.",
+            "This helped us prioritise the main customer and administrative workflows for the first iteration, then expand into staff operations and reporting during the second.",
+          ],
+        },
+        {
+          type: "gallery",
+          gallery: {
+            layout: "two-column",
+            items: [
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/enquiry-flow.png",
+                alt: "Customer enquiry and booking workflow",
+                caption: "Customer enquiry and booking flow",
+                aspectRatio: "landscape",
+              },
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/role-flow.png",
+                alt: "Customer, staff, and administrator role workflow",
+                caption: "Role and permission mapping",
+                aspectRatio: "landscape",
+              },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: "ui-ux-design",
+      number: "03",
+      title: "Role-based UI/UX design",
+      details: [
+        {
+          label: "Design focus",
+          items: [
+            "Information hierarchy",
+            "Status visibility",
+            "Error prevention",
+            "Responsive behaviour",
+          ],
+        },
+      ],
+      blocks: [
+        {
+          type: "gallery",
+          gallery: {
+            layout: "full-width",
+            items: [
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/design-system.png",
+                alt: "Moving House 24/7 interface components and design patterns",
+                caption: "Reusable interface patterns and visual language",
+                aspectRatio: "wide",
+              },
+            ],
+          },
+        },
+        {
+          type: "text",
+          paragraphs: [
+            "I designed each interface around the tasks its user needed to complete. Customer pages prioritised clear progress, reassurance, and communication, while staff and administrative pages focused on efficient access to operational information.",
+            "Reusable patterns for forms, tables, actions, validation, status labels, and navigation helped the system remain consistent even as its number of modules increased.",
+          ],
+        },
+        {
+          type: "list",
+          title: "Interfaces I designed",
+          columns: 2,
+          items: [
+            "Public information pages",
+            "Customer enquiry portal",
+            "Booking and payment pages",
+            "Threaded messages",
+            "Administrative dashboards",
+            "User and booking management",
+            "Staff availability and job pages",
+            "Responsive mobile navigation",
+          ],
+        },
+      ],
+    },
+    {
+      id: "custom-cms",
+      number: "04",
+      title: "Custom content-management system",
+      details: [
+        {
+          label: "Purpose",
+          items: ["Editable public content", "Reduced developer dependency"],
+        },
+      ],
+      blocks: [
+        {
+          type: "text",
+          paragraphs: [
+            "The platform includes custom content-management functionality rather than relying on an external CMS product. Authorised administrators can update public website content through the same business system used for bookings and operations.",
+            "This keeps content editing connected to the client's existing permissions and interface patterns while allowing routine information changes without modifying source code.",
+          ],
+        },
+        {
+          type: "gallery",
+          gallery: {
+            layout: "two-column",
+            items: [
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/cms-list.png",
+                alt: "List of editable Moving House 24/7 website content",
+                caption: "Content-management overview",
+                aspectRatio: "landscape",
+              },
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/cms-edit.png",
+                alt: "Moving House 24/7 content editing form",
+                caption: "Editing public website information",
+                aspectRatio: "landscape",
+              },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: "development",
+      number: "05",
+      title: "Connecting the design to application logic",
+      details: [
+        {
+          label: "Development",
+          items: ["CakePHP", "PHP", "MySQL", "JavaScript", "Bootstrap"],
+        },
+        {
+          label: "Integrations",
+          items: ["Stripe", "Google reCAPTCHA", "FullCalendar"],
+        },
+      ],
+      blocks: [
+        {
+          type: "text",
+          paragraphs: [
+            "The frontend needed to reflect real application state, permissions, validation rules, and database relationships. I worked closely with the backend developers so that interface actions aligned with CakePHP controllers and the underlying business logic.",
+            "Booking approvals, payment availability, messages, staff allocation, and status changes could not be treated as isolated visual interactions. The available actions and feedback had to change according to each user's role and the current workflow state.",
+          ],
+        },
+        {
+          type: "callout",
+          title: "What this taught me",
+          text:
+            "Strong frontend development requires an understanding of the backend, data model, permissions, and business rules—not only the visible interface.",
+        },
+      ],
+    },
+    {
+      id: "challenges",
+      number: "06",
+      title: "Key design and development challenges",
+      blocks: [
+        {
+          type: "list",
+          columns: 1,
+          items: [
+            "Supporting three user roles that interact with the same underlying bookings and jobs",
+            "Presenting large amounts of administrative information without making pages difficult to scan",
+            "Keeping frontend actions aligned with backend permissions and workflow states",
+            "Making table-heavy administrative interfaces usable on mobile screens",
+            "Maintaining consistent interaction patterns across a growing number of modules",
+          ],
+        },
+        {
+          type: "text",
+          paragraphs: [
+            "We addressed these issues through role-based navigation, reusable interface patterns, responsive table strategies, clear status feedback, search and filtering, and regular collaboration between frontend and backend team members.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "outcome",
+      number: "07",
+      title: "Outcome",
+      blocks: [
+        {
+          type: "text",
+          paragraphs: [
+            "The completed platform brought the client's main customer-facing and operational workflows into one connected system. It established a foundation for replacing manual records and managing bookings, communication, payments, staff, jobs, resources, and public content more consistently.",
+            "For me, the project demonstrated how UI/UX design, frontend implementation, backend logic, accessibility, and business requirements need to work together in a real client system.",
+          ],
+        },
+        {
+          type: "list",
+          title: "Delivered outcomes",
+          columns: 2,
+          items: [
+            "Centralised business information and workflows",
+            "Online customer enquiry and booking experience",
+            "Role-based administrative and staff tools",
+            "Secure invoicing and payment workflow",
+            "Custom website content management",
+            "Responsive interfaces across devices",
+          ],
+        },
+        {
+          type: "gallery",
+          gallery: {
+            layout: "masonry",
+            items: [
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/messages.png",
+                alt: "Moving House 24/7 threaded messaging interface",
+                caption: "Threaded customer communication",
+                aspectRatio: "portrait",
+              },
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/staff-calendar.png",
+                alt: "Moving House 24/7 staff scheduling calendar",
+                caption: "Staff availability and scheduling",
+                aspectRatio: "landscape",
+              },
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/invoice.png",
+                alt: "Moving House 24/7 invoice interface",
+                caption: "Invoice and payment workflow",
+                aspectRatio: "portrait",
+              },
+              {
+                type: "image",
+                src: "/images/projects/moving-house-247/mobile.png",
+                alt: "Moving House 24/7 mobile interface",
+                caption: "Responsive mobile experience",
+                aspectRatio: "portrait",
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ],
 } satisfies Project;

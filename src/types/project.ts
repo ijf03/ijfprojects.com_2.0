@@ -1,10 +1,19 @@
-export type ProjectMediaType = "image" | "video";
-
 export type ProjectStatus =
   | "Completed"
   | "In Development"
   | "Ongoing"
   | "Archived";
+
+export type ProjectMediaType = "image" | "video";
+
+export type GalleryLayout =
+  | "single"
+  | "two-column"
+  | "three-column"
+  | "featured-grid"
+  | "masonry"
+  | "carousel"
+  | "full-width";
 
 export interface ProjectMedia {
   type: ProjectMediaType;
@@ -12,69 +21,129 @@ export interface ProjectMedia {
   alt: string;
   caption?: string;
   poster?: string;
+
+  /**
+   * Optional display hints. The component may ignore these on small screens.
+   */
+  aspectRatio?: "square" | "portrait" | "landscape" | "wide";
+  objectPosition?: string;
 }
 
-export interface ProjectLinks {
-  github?: string;
-  live?: string;
-  caseStudy?: string;
+export interface ProjectGallery {
+  layout: GalleryLayout;
+  items: ProjectMedia[];
+
+  /**
+   * Used by layouts such as featured-grid to make one item visually dominant.
+   */
+  featuredIndex?: number;
 }
 
-export interface CaseStudySection {
+export interface ProjectLink {
+  label: string;
+  href: string;
+  type?: "github" | "live" | "figma" | "documentation" | "external";
+}
+
+export interface ProjectDetailGroup {
+  label: string;
+  items: string[];
+}
+
+export interface TextBlock {
+  type: "text";
+  paragraphs: string[];
+}
+
+export interface GalleryBlock {
+  type: "gallery";
+  gallery: ProjectGallery;
+}
+
+export interface ListBlock {
+  type: "list";
+  title?: string;
+  items: string[];
+  columns?: 1 | 2 | 3;
+}
+
+export interface CalloutBlock {
+  type: "callout";
+  title?: string;
+  text: string;
+}
+
+export interface QuoteBlock {
+  type: "quote";
+  quote: string;
+  attribution?: string;
+}
+
+export interface LinksBlock {
+  type: "links";
+  links: ProjectLink[];
+}
+
+export type ProjectContentBlock =
+  | TextBlock
+  | GalleryBlock
+  | ListBlock
+  | CalloutBlock
+  | QuoteBlock
+  | LinksBlock;
+
+export interface ProjectSection {
   id: string;
+  number?: string;
   title: string;
   eyebrow?: string;
-  paragraphs: string[];
-  highlights?: string[];
-  media?: ProjectMedia[];
-}
 
-export interface ProjectChallenge {
-  title: string;
-  problem: string;
-  solution: string;
-}
+  /**
+   * Optional section-specific metadata, such as:
+   * Tech stack: Figma
+   * Scope: Branding, Design foundations, UI components
+   */
+  details?: ProjectDetailGroup[];
 
-export interface ProjectOutcome {
-  summary: string;
-  highlights: string[];
-}
-
-export interface ProjectCaseStudy {
-  introduction?: string;
-  problem?: string[];
-  goals?: string[];
-  responsibilities?: string[];
-  process?: CaseStudySection[];
-  challenges?: ProjectChallenge[];
-  outcome?: ProjectOutcome;
-  learnings?: string[];
-  nextSteps?: string[];
+  /**
+   * Blocks render in array order, allowing galleries to appear above,
+   * below, or between written content.
+   */
+  blocks: ProjectContentBlock[];
 }
 
 export interface Project {
   slug: string;
   title: string;
+  tagline: string;
   type: string;
   year: string;
+  completedDate?: string;
   featured: boolean;
   status?: ProjectStatus;
 
   shortDescription: string;
-  overview: string;
+  introduction: string[];
+
+  disciplines: string[];
+  roles: string[];
+  responsibilities: string[];
 
   client?: string;
-  role?: string;
   duration?: string;
   team?: string[];
   categories?: string[];
 
-  stack: string[];
+  techStack: string[];
   features: string[];
 
   coverImage: string;
-  media: ProjectMedia[];
-  links: ProjectLinks;
 
-  caseStudy?: ProjectCaseStudy;
+  /**
+   * Displayed near the project header, before the main case-study sections.
+   */
+  heroGallery?: ProjectGallery;
+
+  links: ProjectLink[];
+  sections: ProjectSection[];
 }

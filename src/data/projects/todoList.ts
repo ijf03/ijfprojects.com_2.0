@@ -3,6 +3,7 @@ import type { Project } from "../../types/project";
 export const todoList = {
   slug: "todo-list",
   title: "To-do List App",
+  tagline: "A typed React application for straightforward task management.",
   type: "Frontend App",
   year: "2024",
   featured: true,
@@ -11,13 +12,20 @@ export const todoList = {
   shortDescription:
     "A task management app built to practise React, TypeScript, component structure, and state handling.",
 
-  overview:
-    "A focused frontend project for managing everyday tasks while applying reusable React components, typed data, and straightforward state-driven interactions.",
+  introduction: [
+    "I built this small project to practise React component design and TypeScript without adding unnecessary backend complexity.",
+  ],
 
-  role: "Frontend Developer",
+  disciplines: ["Development"],
+  roles: ["Frontend Developer"],
+  responsibilities: [
+    "Designed and developed the complete interface",
+    "Defined typed task data",
+    "Implemented task creation and completion interactions",
+  ],
+
   categories: ["Frontend Development", "Productivity"],
-
-  stack: ["React", "TypeScript", "Vite", "CSS"],
+  techStack: ["React", "TypeScript", "Vite", "CSS"],
 
   features: [
     "Create and manage tasks",
@@ -28,42 +36,45 @@ export const todoList = {
 
   coverImage: "/images/projects/ToDoList.png",
 
-  media: [
+  heroGallery: {
+    layout: "full-width",
+    items: [
+      {
+        type: "image",
+        src: "/images/projects/ToDoList.png",
+        alt: "To-do List application interface",
+        caption: "Task management interface",
+        aspectRatio: "wide",
+      },
+    ],
+  },
+
+  links: [
     {
-      type: "image",
-      src: "/images/projects/ToDoList.png",
-      alt: "To-do List application interface",
-      caption: "Task management interface",
+      label: "View repository",
+      href: "https://github.com/ijf03/Todo_List",
+      type: "github",
+    },
+    {
+      label: "View live project",
+      href: "https://ijf03.github.io/Todo_List/",
+      type: "live",
     },
   ],
 
-  links: {
-    github: "https://github.com/ijf03/Todo_List",
-    live: "https://ijf03.github.io/Todo_List/",
-  },
-
-  caseStudy: {
-    problem: [
-      "I wanted a small project that would let me practise React component design and TypeScript without unnecessary backend complexity.",
-    ],
-    goals: [
-      "Create reusable UI components",
-      "Manage task state predictably",
-      "Use TypeScript to improve data consistency",
-    ],
-    responsibilities: [
-      "Designed and developed the complete application",
-      "Defined typed task data",
-      "Implemented task creation and completion interactions",
-    ],
-    outcome: {
-      summary:
-        "The project provided a focused introduction to building typed React applications with reusable components and state-driven interfaces.",
-      highlights: [
-        "Applied TypeScript in a React project",
-        "Practised component composition",
-        "Deployed the application using GitHub Pages",
+  sections: [
+    {
+      id: "overview",
+      number: "01",
+      title: "Project overview",
+      blocks: [
+        {
+          type: "text",
+          paragraphs: [
+            "The project focuses on reusable components, predictable state changes, and consistent typed application data.",
+          ],
+        },
       ],
     },
-  },
+  ],
 } satisfies Project;
