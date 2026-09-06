@@ -49,6 +49,14 @@ export const movingHouse247 = {
     "Full-stack Development",
   ],
 
+  skills: [
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "UI/UX Design",
+  ],
+
   techStack: [
     "CakePHP",
     "PHP",

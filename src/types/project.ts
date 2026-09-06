@@ -133,6 +133,7 @@ export interface Project {
   duration?: string;
   team?: string[];
   categories?: string[];
+  skills: string[];
 
   techStack: string[];
   features: string[];

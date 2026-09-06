@@ -55,6 +55,8 @@ export const nutricoach = {
     "Data Visualisation",
   ],
 
+  skills: ["Kotlin", "UI/UX Design"],
+
     techStack: [
     "Kotlin",
     "Jetpack Compose",

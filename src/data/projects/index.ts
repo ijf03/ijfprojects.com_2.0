@@ -1,7 +1,5 @@
 import type { Project } from "../../types/project";
 
-import { bubbleTeaStore } from "./bubbleTeaStore";
-import { esportsPortfolio } from "./esportsPortfolio";
 import { movingHouse247 } from "./movingHouse247";
 import { todoList } from "./todoList";
 import { nutricoach } from "./NutriCoach";

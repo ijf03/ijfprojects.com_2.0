@@ -1,5 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { Cpu } from "lucide-react";
+import { Link } from "react-router-dom";
 import { homeContent } from "../../data/home";
 import { skillGroups } from "../../data/skills";
 
@@ -47,11 +48,11 @@ function SkillsPreview() {
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-default bg-surface/70 p-6 shadow-xl backdrop-blur-xl"
+              className="group relative overflow-hidden rounded-4xl border border-default bg-surface/70 p-6 shadow-xl backdrop-blur-xl"
             >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
-                <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-brand/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 h-24 w-full bg-linear-to-t from-brand/10 to-transparent" />
               </div>
 
               <div className="relative">
@@ -73,12 +74,13 @@ function SkillsPreview() {
 
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
-                    <span
+                    <Link
                       key={skill}
-                      className="rounded-full border border-default bg-background/50 px-3 py-1.5 text-sm text-secondary transition-colors duration-300 group-hover:border-brand/40 group-hover:text-primary"
+                      to={`/projects?search=${encodeURIComponent(skill)}`}
+                      className="rounded-full border border-default bg-background/50 px-3 py-1.5 text-sm text-secondary transition-colors duration-300 hover:border-brand hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand group-hover:border-brand/40 group-hover:text-primary"
                     >
                       {skill}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               </div>

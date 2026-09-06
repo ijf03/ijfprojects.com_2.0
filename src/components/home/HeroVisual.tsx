@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, GitBranch, Layers3, Terminal } from "lucide-react";
+import { Code2, GitBranch, Terminal } from "lucide-react";
 import type { Transition } from "framer-motion";
 
 const floatingTransition: Transition = {

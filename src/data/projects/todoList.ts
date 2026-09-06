@@ -25,6 +25,7 @@ export const todoList = {
   ],
 
   categories: ["Frontend Development", "Productivity"],
+  skills: ["React", "TypeScript", "CSS", "Vite"],
   techStack: ["React", "TypeScript", "Vite", "CSS"],
 
   features: [

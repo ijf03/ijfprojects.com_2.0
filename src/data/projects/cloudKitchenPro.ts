@@ -1,5 +1,3 @@
-import type { Project } from "../../types/project";
-
 export const cloudKitchenPro = {
   slug: "cloudKitchenPro",
   title: "Cloud Kitchen Pro",
@@ -64,7 +62,7 @@ export const cloudKitchenPro = {
     },
   ],
 
-  links: {},
+  links: [],
 
   caseStudy: {
     introduction:
@@ -207,4 +205,4 @@ export const cloudKitchenPro = {
       "Refine automation around notifications and recurring workflows",
     ],
   },
-} satisfies Project;
+};

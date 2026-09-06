@@ -26,6 +26,7 @@ export const bubbleTeaStore = {
   ],
 
   categories: ["Full-stack Development", "E-Commerce"],
+  skills: ["React", "Node.js", "Express", "MongoDB", "HTML", "CSS"],
   techStack: ["React", "Node.js", "Express", "MongoDB", "HTML", "CSS"],
 
   features: [
