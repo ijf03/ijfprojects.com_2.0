@@ -4,6 +4,7 @@ import { bubbleTeaStore } from "./bubbleTeaStore";
 import { esportsPortfolio } from "./esportsPortfolio";
 import { movingHouse247 } from "./movingHouse247";
 import { todoList } from "./todoList";
+import { nutricoach } from "./NutriCoach";
 
 export { bubbleTeaStore } from "./bubbleTeaStore";
 export { esportsPortfolio } from "./esportsPortfolio";
@@ -12,9 +13,10 @@ export { todoList } from "./todoList";
 
 export const projects: Project[] = [
   movingHouse247,
-  bubbleTeaStore,
-  esportsPortfolio,
+  // bubbleTeaStore,
+  // esportsPortfolio,
   todoList,
+  nutricoach,
 ];
 
 export const featuredProjects = projects.filter(

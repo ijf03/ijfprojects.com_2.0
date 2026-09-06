@@ -168,7 +168,7 @@ function ProjectMediaGallery({
             aria-modal="true"
             aria-label="Project image viewer"
             onClick={() => setActiveIndex(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-3 backdrop-blur-sm sm:p-6"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-3 backdrop-blur-sm sm:p-6"
           >
             <button
               type="button"
@@ -264,6 +264,11 @@ function GalleryPreviewItem({
   hiddenItemCount,
   onOpen,
 }: GalleryPreviewItemProps) {
+  const mediaClassName =
+    item.aspectRatio === "portrait"
+      ? "mx-auto block max-h-[70vh] w-auto max-w-full object-contain rounded-2xl"
+      : "block h-auto w-full rounded-2xl";
+
   return (
     <figure
       className={[
@@ -289,7 +294,7 @@ function GalleryPreviewItem({
             src={item.src}
             alt={item.alt}
             loading="lazy"
-            className="block h-auto w-full rounded-2xl"
+            className={mediaClassName}
           />
         ) : (
           <video
@@ -297,7 +302,7 @@ function GalleryPreviewItem({
             poster={item.poster}
             muted
             preload="metadata"
-            className="block h-auto w-full rounded-2xl"
+            className={mediaClassName}
           />
         )}
 

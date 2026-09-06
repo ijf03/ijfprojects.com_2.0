@@ -6,7 +6,6 @@ import AboutPage from "../pages/AboutPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import ProjectDetailPage from "../pages/ProjectDetailPage";
 import ResumePage from "../pages/ResumePage";
-import ExperiencePage from "../pages/ExperiencePage";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +18,6 @@ export const router = createBrowserRouter([
       { path: "projects/:slug", element: <ProjectDetailPage /> },
       { path: "resume", element: <ResumePage /> },
       { path: "contact", element: <Navigate to="/about#contact" replace />},
-      { path: "experience", element: <ExperiencePage /> },
     ],
   },
 ]);

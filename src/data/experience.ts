@@ -2,8 +2,8 @@ import type { Experience } from "../types/experience";
 
 export const experiences: Experience[] = [
   {
-    role: "Coding Coach",
-    organisation: "Skills Samurai Elsternwick",
+    role: "Coding & Mathematics Coach",
+    organisation: "Skills Samurai Elsternwick; Skills Samurai Mount Glen",
     period: "2025 - Present",
     type: "Work",
     description:
@@ -24,9 +24,9 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: "Founder and Cultural Affairs Officer",
+    role: "Founder; Cultural Affairs Officer",
     organisation: "Filipino Association of Monash",
-    period: "2025 - Present",
+    period: "2025 - 2026",
     type: "Leadership",
     description:
       "Helped establish a student organisation that connects Filipino students at Monash University and promotes culture, belonging, and community.",
@@ -43,7 +43,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: "Team Lead",
+    role: "Co CEO / Team Lead; Marketing Department Lead",
     organisation: "Monash Nexus for Emerging Technologies",
     period: "2024 - 2026",
     type: "Leadership",
@@ -85,7 +85,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: "Head of Clan",
+    role: "Head of Organisation",
     organisation: "Dovahkiin Esports",
     period: "2022 - 2023",
     type: "Community",

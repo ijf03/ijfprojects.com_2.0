@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function ScrollToHash() {
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!hash) {
       window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: "auto",
       });
 
       return;
@@ -24,7 +24,7 @@ function ScrollToHash() {
         block: "start",
       });
     });
-  }, [hash]);
+  }, [pathname, hash]);
 
   return null;
 }

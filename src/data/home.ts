@@ -27,10 +27,4 @@ export const homeContent = {
     buttonPath: "/projects",
   },
 
-  experiencePreview: {
-    eyebrow: "Experience",
-    heading: "Technical work supported by leadership and communication.",
-    buttonLabel: "View Experience",
-    buttonPath: "/experience",
-  },
 } as const;
