@@ -2,7 +2,13 @@ import { motion, type Variants } from "framer-motion";
 import { Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import { homeContent } from "../../data/home";
-import { skillGroups } from "../../data/skills";
+import { projects } from "../../data/projects";
+import { getTechnicalSkillGroups, getUncategorisedTechnologies } from "../../data/projectTechnicalSkills";
+
+if (import.meta.env.DEV) {
+  const unknown = getUncategorisedTechnologies(projects);
+  if (unknown.length) console.warn(`Uncategorised project technologies: ${unknown.join(", ")}`);
+}
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -15,6 +21,7 @@ const sectionVariants: Variants = {
 
 function SkillsPreview() {
   const { skillsPreview } = homeContent;
+  const visibleGroups = getTechnicalSkillGroups(projects);
 
   return (
     <section className="border-default border-t py-20">
@@ -40,7 +47,7 @@ function SkillsPreview() {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {skillGroups.map((group, index) => (
+          {visibleGroups.map((group, index) => (
             <motion.article
               key={group.title}
               initial={{ opacity: 0, y: 24 }}

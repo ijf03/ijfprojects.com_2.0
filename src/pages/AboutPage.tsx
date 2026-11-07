@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ContactSection from "../components/contact/ContactSection";
 import { about } from "../data/about";
 
@@ -24,6 +25,13 @@ function AboutPage() {
               {paragraph}
             </p>
           ))}
+          <p className="text-secondary leading-8">
+            For a glimpse of life beyond the projects, explore my{" "}
+            <Link to="/SideQuests" className="text-brand underline underline-offset-4 hover:text-primary">
+              Side Quests
+            </Link>
+            {" "}— a scrapbook of community, esports, and moments along the way.
+          </p>
         </div>
 
       </section>

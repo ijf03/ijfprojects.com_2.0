@@ -4,6 +4,7 @@ import { movingHouse247 } from "./movingHouse247";
 import { todoList } from "./todoList";
 import { nutricoach } from "./NutriCoach";
 import { cifar10 } from "./cifar10";
+import { smartPark } from "./SmartParkAPI";
 
 export { bubbleTeaStore } from "./bubbleTeaStore";
 export { esportsPortfolio } from "./esportsPortfolio";
@@ -17,6 +18,8 @@ export const projects: Project[] = [
   todoList,
   nutricoach,
   cifar10,
+  smartPark,
+
 ];
 
 export const featuredProjects = projects.filter(

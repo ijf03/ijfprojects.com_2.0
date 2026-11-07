@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, X } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { projects } from "../data/projects";
+import { findTechnology } from "../data/technologyCategories";
 import ProjectCard from "../components/projects/ProjectCard";
 
 function ProjectsPage() {
@@ -22,7 +23,12 @@ function ProjectsPage() {
       project.shortDescription,
       ...project.skills,
       ...project.techStack,
-    ].some((value) => value.toLowerCase().includes(normalizedSearch));
+    ].some((value) => value.toLowerCase().includes(normalizedSearch)) ||
+      project.techStack.some((value) => {
+        const technology = findTechnology(value);
+        const searchTechnology = findTechnology(normalizedSearch);
+        return technology !== undefined && technology.name === searchTechnology?.name;
+      });
   });
 
   function toggleSearch() {
