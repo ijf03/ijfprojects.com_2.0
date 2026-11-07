@@ -3,6 +3,7 @@ import type { Project } from "../../types/project";
 import { movingHouse247 } from "./movingHouse247";
 import { todoList } from "./todoList";
 import { nutricoach } from "./NutriCoach";
+import { cifar10 } from "./cifar10";
 
 export { bubbleTeaStore } from "./bubbleTeaStore";
 export { esportsPortfolio } from "./esportsPortfolio";
@@ -15,6 +16,7 @@ export const projects: Project[] = [
   // esportsPortfolio,
   todoList,
   nutricoach,
+  cifar10,
 ];
 
 export const featuredProjects = projects.filter(
