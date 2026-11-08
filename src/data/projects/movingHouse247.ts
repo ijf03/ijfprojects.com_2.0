@@ -57,18 +57,13 @@ export const movingHouse247 = {
     "UI/UX Design",
   ],
 
-  techStack: [
-    "CakePHP",
-    "PHP",
-    "MySQL",
-    "JavaScript",
-    "Bootstrap",
-    "HTML",
-    "CSS",
-    "Stripe API",
-    "Google reCAPTCHA",
-    "FullCalendar",
-  ],
+  techStack: {
+    backend: ["CakePHP"],
+    languages: ["PHP", "JavaScript"],
+    databases: ["MySQL"],
+    frontend: ["Bootstrap", "HTML", "CSS"],
+    integrations: ["Stripe API", "Google reCAPTCHA", "FullCalendar"],
+  },
 
   features: [
     "Custom CMS for managing public website content",

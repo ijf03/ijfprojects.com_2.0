@@ -6,6 +6,7 @@ type ScrapbookMemory = {
   id: string;
   title: string;
   eyebrow: string;
+  category: "Community" | "Volunteer" | "Hobby";
   caption: string;
   story: string;
   emoji: string;
@@ -18,42 +19,42 @@ type ScrapbookMemory = {
 
 const memories: ScrapbookMemory[] = [
   {
-    id: "01", title: "Founding FAM", eyebrow: "THE PEOPLE",
+    id: "01", title: "Founding FAM", eyebrow: "THE PEOPLE", category: "Community",
     caption: "A community, from the beginning.",
     story: "A moment with the founding leadership team of the Filipino Association of Monash. We helped create a space for Filipino students to connect, celebrate culture, and find community at Monash.",
     emoji: "🪩", image: "/images/SideQuests/FAM/Fam Founding leadership team.jpeg", imageAlt: "The Filipino Association of Monash founding leadership team together in front of a Philippine flag",
     tint: "lilac", tags: ["Community", "Culture"], photoLabel: "FAM FOUNDING TEAM",
   },
   {
-    id: "02", title: "On the mic", eyebrow: "SHOUTCASTING",
+    id: "02", title: "On the mic", eyebrow: "SHOUTCASTING", category: "Hobby",
     caption: "Bringing the game to life.",
     story: "Esports has taken me from online broadcasts to live events, hosting and commentating games including Call of Duty Mobile and Valorant. Here is a moment from the Realme Regional Wars desk.",
     emoji: "🎤", image: "/images/SideQuests/Esports Shoutcasting/Shoutcasting.jpg", imageAlt: "Two presenters at the Realme Regional Wars broadcast desk",
     tint: "pink", tags: ["Esports", "Hosting"], photoLabel: "SHOUTCASTING",
   },
   {
-    id: "03", title: "Homes of Hope", eyebrow: "GIVING BACK",
+    id: "03", title: "Homes of Hope", eyebrow: "GIVING BACK", category: "Volunteer",
     caption: "Small acts, shared hope.",
     story: "I founded Homes of Hope to support families in Cebu affected by Super Typhoon Rai, also known as Odette. The initiative provided materials to help rebuild homes for more than 100 families.",
     emoji: "🧩", image: "/images/SideQuests/Fundraisers & Outreaches/Homes of Hope.jpg", imageAlt: "People gathered around a table at a Homes of Hope activity",
     tint: "yellow", tags: ["Outreach", "Community"], photoLabel: "HOMES OF HOPE",
   },
   {
-    id: "04", title: "VR Pictionary", eyebrow: "MONASH EVENTS",
+    id: "04", title: "VR Pictionary", eyebrow: "MONASH EVENTS", category: "Volunteer",
     caption: "Drawing outside the lines.",
     story: "A moment from a VR Pictionary event with Monash Nexus for Emerging Technologies, where we brought people together around immersive technology and creative experiences.",
     emoji: "🎮", image: "/images/SideQuests/Monash Events/VR Pictionary Event.jpeg", imageAlt: "At a Monash Nexus for Emerging Technologies VR Pictionary event",
     tint: "blue", tags: ["Monash", "Emerging Technology"], photoLabel: "VR PICTIONARY",
   },
   {
-    id: "05", title: "Tier One, together", eyebrow: "THE CREW",
+    id: "05", title: "Tier One, together", eyebrow: "THE CREW", category: "Community",
     caption: "Good company, good memories.",
     story: "A group photo from a Tier One Entertainment photoshoot. Esports has introduced me to people across hosting, commentary, and event production.",
     emoji: "💌", image: "/images/SideQuests/Esports Shoutcasting/t1 photoshoot.jpg", imageAlt: "A group at a Tier One Entertainment photoshoot",
     tint: "peach", tags: ["Esports", "Community"], photoLabel: "TIER ONE TEAM",
   },
   {
-    id: "06", title: "A Tier One moment", eyebrow: "BEHIND THE MIC",
+    id: "06", title: "A Tier One moment", eyebrow: "BEHIND THE MIC", category: "Hobby",
     caption: "A moment between broadcasts.",
     story: "From a Tier One Entertainment photoshoot, a little snapshot of my journey as an esports commentator and events host.",
     emoji: "✨", image: "/images/SideQuests/Esports Shoutcasting/T1 Entertainment Photoshoot.jpg", imageAlt: "Portrait from a Tier One Entertainment photoshoot",
@@ -96,7 +97,7 @@ function MemoryPhoto({ memory, onOpen, index }: {
         <span className="sq-photo-corner">{memory.eyebrow}</span>
       </span>
       <span className="sq-handwritten sq-polaroid-caption">{memory.caption}</span>
-      <span className="sq-polaroid-index">{memory.id} / {String(memories.length).padStart(2, "0")}</span>
+      <span className="sq-polaroid-index">{memory.category.toUpperCase()}</span>
     </button>
   );
 }
@@ -167,14 +168,13 @@ function MemoryModal({ memory, onClose, onPrevious, onNext }: {
           <span className="sq-modal-tape" aria-hidden="true" />
         </div>
         <div className="sq-modal-story">
-          <span className="sq-overline">SIDE QUEST #{memory.id} • {memory.eyebrow}</span>
+          <span className="sq-overline">{memory.eyebrow}</span>
           <h2 id="sq-modal-title">{memory.title}</h2>
           <p className="sq-modal-quote sq-handwritten">“{memory.caption}”</p>
           <p id="sq-modal-description">{memory.story}</p>
           <div className="sq-tag-list">{memory.tags.map((tag) => <span key={tag}>#{tag.replaceAll(" ", "")}</span>)}</div>
           <div className="sq-modal-pagination">
             <button type="button" onClick={onPrevious}>← Previous</button>
-            <span>{memory.id} / {String(memories.length).padStart(2, "0")}</span>
             <button type="button" onClick={onNext}>Next →</button>
           </div>
         </div>

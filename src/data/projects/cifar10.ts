@@ -67,21 +67,13 @@ export const cifar10 = {
     "Nix",
   ],
 
-  techStack: [
-    "Python",
-    "PyTorch",
-    "Torchvision",
-    "ONNX",
-    "ONNX Runtime Web",
-    "React",
-    "TypeScript",
-    "Vite",
-    "Nix",
-    "Node.js",
-    "HTML",
-    "CSS",
-    "Vercel",
-  ],
+  techStack: {
+    languages: ["Python", "TypeScript"],
+    machineLearning: ["PyTorch", "Torchvision", "ONNX", "ONNX Runtime Web"],
+    frontend: ["React", "Vite", "HTML", "CSS"],
+    devops: ["Nix", "Vercel"],
+    backend: ["Node.js"],
+  },
 
   features: [
     "CNN training on all 50,000 CIFAR-10 training images",

@@ -1,3 +1,5 @@
+import type { ProjectTechStack } from "../data/technologyCategories";
+
 export type ProjectStatus =
   | "Completed"
   | "In Development"
@@ -135,7 +137,7 @@ export interface Project {
   categories?: string[];
   skills: string[];
 
-  techStack: string[];
+  techStack: ProjectTechStack;
   features: string[];
 
   coverImage: string;

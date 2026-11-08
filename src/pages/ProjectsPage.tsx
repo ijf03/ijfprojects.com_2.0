@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Search, X } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { projects } from "../data/projects";
-import { findTechnology } from "../data/technologyCategories";
+import { matchesProjectSearch } from "../data/projectSearch";
 import ProjectCard from "../components/projects/ProjectCard";
 
 function ProjectsPage() {
@@ -11,25 +11,7 @@ function ProjectsPage() {
   const [isSearchOpen, setIsSearchOpen] = useState(initialSearch.length > 0);
   const [search, setSearch] = useState(initialSearch);
 
-  const normalizedSearch = search.trim().toLowerCase();
-  const filteredProjects = projects.filter((project) => {
-    if (!normalizedSearch) {
-      return true;
-    }
-
-    return [
-      project.title,
-      project.type,
-      project.shortDescription,
-      ...project.skills,
-      ...project.techStack,
-    ].some((value) => value.toLowerCase().includes(normalizedSearch)) ||
-      project.techStack.some((value) => {
-        const technology = findTechnology(value);
-        const searchTechnology = findTechnology(normalizedSearch);
-        return technology !== undefined && technology.name === searchTechnology?.name;
-      });
-  });
+  const filteredProjects = projects.filter((project) => matchesProjectSearch(project, search));
 
   function toggleSearch() {
     setIsSearchOpen((current) => !current);

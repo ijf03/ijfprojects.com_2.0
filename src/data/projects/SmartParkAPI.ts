@@ -73,24 +73,14 @@ export const smartPark = {
     "Performance Testing",
   ],
 
-  techStack: [
-    "Python",
-    "FastAPI",
-    "PyTorch",
-    "Ultralytics YOLO",
-    "React",
-    "TypeScript",
-    "Vite",
-    "Redis",
-    "Docker",
-    "Kubernetes",
-    "Google Kubernetes Engine",
-    "Google Cloud Storage",
-    "GCS Fuse",
-    "Artifact Registry",
-    "Workload Identity",
-    "Locust",
-  ],
+  techStack: {
+    languages: ["Python", "TypeScript"],
+    backend: ["FastAPI"],
+    machineLearning: ["PyTorch", "Ultralytics YOLO"],
+    frontend: ["React", "Vite"],
+    databases: ["Redis"],
+    devops: ["Docker", "Kubernetes", "Google Kubernetes Engine", "Google Cloud Storage", "GCS Fuse", "Artifact Registry", "Workload Identity", "Locust"],
+  },
 
   features: [
     "Parking-availability ranking from simulated camera images",

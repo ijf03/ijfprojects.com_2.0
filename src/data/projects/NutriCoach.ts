@@ -57,16 +57,13 @@ export const nutricoach = {
 
   skills: ["Kotlin", "UI/UX Design"],
 
-    techStack: [
-    "Kotlin",
-    "Jetpack Compose",
-    "Material 3",
-    "Room",
-    "Retrofit",
-    "Kotlin Coroutines",
-    "Gemini API",
-    "FruityVice API",
-  ],
+    techStack: {
+    languages: ["Kotlin"],
+    mobile: ["Jetpack Compose", "Material 3", "Kotlin Coroutines"],
+    databases: ["Room"],
+    backend: ["Retrofit"],
+    integrations: ["Gemini API", "FruityVice API"],
+  },
 
   features: [
     "Multi-user account claiming, login, and persistent sessions",

@@ -1,46 +1,37 @@
 import type { Project } from "../types/project";
 import type { SkillGroup } from "../types/skill";
-import { findTechnology, technologyCategories } from "./technologyCategories";
+import { normalizeTechnology, technologyCategories } from "./technologyCategories.ts";
 
-export function getTechnicalSkillsFromProjects(
-  projects: readonly Pick<Project, "techStack">[],
-): string[] {
-  const skills = new Map<string, string>();
+type TechnologyProject = Pick<Project, "techStack">;
 
-  for (const project of projects) {
-    for (const value of project.techStack) {
-      if (typeof value !== "string") continue;
-      const trimmed = value.trim();
-      const skill = findTechnology(trimmed)?.name ?? trimmed;
-      if (skill && !skills.has(skill.toLowerCase())) {
-        skills.set(skill.toLowerCase(), skill);
+export function getTechnicalSkillGroups(projects: readonly TechnologyProject[]): SkillGroup[] {
+  return technologyCategories.map(({ key, title }) => {
+    const skills = new Map<string, string>();
+    for (const project of projects) {
+      for (const value of project.techStack[key] ?? []) {
+        const skill = normalizeTechnology(value);
+        if (skill && !skills.has(skill.toLowerCase())) skills.set(skill.toLowerCase(), skill);
       }
     }
-  }
-
-  return [...skills.values()].sort((a, b) =>
-    a.localeCompare(b, "en", { sensitivity: "base" }),
-  );
+    return {
+      title,
+      skills: [...skills.values()].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" })),
+    };
+  }).filter(({ skills }) => skills.length > 0);
 }
 
-export function getUncategorisedTechnologies(
-  projects: readonly Pick<Project, "techStack">[],
-): string[] {
-  return getTechnicalSkillsFromProjects(projects).filter((skill) => !findTechnology(skill));
-}
-
-export function getTechnicalSkillGroups(
-  projects: readonly Pick<Project, "techStack">[],
-): SkillGroup[] {
-  const skills = getTechnicalSkillsFromProjects(projects);
-  const groups = technologyCategories.map(({ title }) => ({ title, skills: [] as string[] }));
-  const otherSkills: string[] = [];
-
-  for (const skill of skills) {
-    const category = findTechnology(skill)?.category;
-    const group = groups.find(({ title }) => title === category);
-    (group?.skills ?? otherSkills).push(skill);
+/** Report conflicting assignments without overriding a project's categories. */
+export function getTechnologyCategoryConflicts(projects: readonly TechnologyProject[]): string[] {
+  const assignments = new Map<string, { name: string; categories: Set<string> }>();
+  for (const { title, skills } of getTechnicalSkillGroups(projects)) {
+    for (const name of skills) {
+      const key = name.toLowerCase();
+      const assignment = assignments.get(key) ?? { name, categories: new Set<string>() };
+      assignment.categories.add(title);
+      assignments.set(key, assignment);
+    }
   }
-  if (otherSkills.length) groups.push({ title: "Other Technologies", skills: otherSkills });
-  return groups.filter((group) => group.skills.length > 0);
+  return [...assignments.values()]
+    .filter(({ categories }) => categories.size > 1)
+    .map(({ name, categories }) => name + ": " + [...categories].join(", "));
 }

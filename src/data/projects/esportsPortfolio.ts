@@ -26,7 +26,10 @@ export const esportsPortfolio = {
 
   categories: ["Frontend Development", "Personal Branding", "Esports"],
   skills: ["HTML", "CSS", "JavaScript"],
-  techStack: ["HTML", "CSS", "JavaScript"],
+  techStack: {
+    frontend: ["HTML", "CSS"],
+    languages: ["JavaScript"],
+  },
 
   features: [
     "Responsive page layouts",

@@ -1,3 +1,4 @@
+import { flattenTechStack } from "../../data/technologyCategories";
 import { Link } from "react-router-dom";
 import type { Project } from "../../types/project";
 
@@ -8,8 +9,9 @@ type ProjectCardProps = {
 const MAX_VISIBLE_TECH = 4;
 
 function ProjectCard({ project }: ProjectCardProps) {
-  const visibleTech = project.techStack.slice(0, MAX_VISIBLE_TECH);
-  const remainingTech = project.techStack.length - visibleTech.length;
+  const technologies = flattenTechStack(project.techStack);
+  const visibleTech = technologies.slice(0, MAX_VISIBLE_TECH);
+  const remainingTech = technologies.length - visibleTech.length;
 
   return (
     <article className="h-full">

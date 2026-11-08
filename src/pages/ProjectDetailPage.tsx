@@ -1,3 +1,4 @@
+import { flattenTechStack } from "../data/technologyCategories";
 import { Link, useParams } from "react-router-dom";
 import { getProjectBySlug } from "../data/projects";
 import ProjectMediaGallery from "../components/projects/ProjectMediaGallery";
@@ -106,7 +107,7 @@ function ProjectDetailPage() {
 
           <ProjectMetaGroup
             label="Tools & technologies"
-            items={project.techStack}
+            items={flattenTechStack(project.techStack)}
           />
 
           <ProjectMetaGroup

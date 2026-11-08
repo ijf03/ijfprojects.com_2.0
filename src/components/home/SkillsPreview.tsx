@@ -3,11 +3,11 @@ import { Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import { homeContent } from "../../data/home";
 import { projects } from "../../data/projects";
-import { getTechnicalSkillGroups, getUncategorisedTechnologies } from "../../data/projectTechnicalSkills";
+import { getTechnicalSkillGroups, getTechnologyCategoryConflicts } from "../../data/projectTechnicalSkills";
 
 if (import.meta.env.DEV) {
-  const unknown = getUncategorisedTechnologies(projects);
-  if (unknown.length) console.warn(`Uncategorised project technologies: ${unknown.join(", ")}`);
+  const conflicts = getTechnologyCategoryConflicts(projects);
+  if (conflicts.length) console.warn(`Technologies assigned to multiple categories: ${conflicts.join(", ")}`);
 }
 
 const sectionVariants: Variants = {
