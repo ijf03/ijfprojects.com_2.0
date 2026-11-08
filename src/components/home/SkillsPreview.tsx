@@ -26,7 +26,7 @@ function SkillCategoryCard({ group, index }: { group: SkillGroup; index: number 
         animate={{ y: reduceMotion || topInView ? 0 : 24 }}
         transition={{ duration: 0.5 }}
         whileHover={reduceMotion ? undefined : { y: -8 }}
-        className="group relative overflow-hidden rounded-2xl border border-default bg-surface/70 p-4 shadow-xl backdrop-blur-xl sm:rounded-4xl sm:p-6"
+        className="group relative overflow-hidden rounded-2xl border border-default bg-surface/70 p-4 shadow-xl backdrop-blur-xl sm:rounded-4xl sm:p-6 md:h-full"
       >
         <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
