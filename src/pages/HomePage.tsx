@@ -7,9 +7,7 @@ function HomePage() {
   return (
     <>
         <HeroSection />
-        <FadeIn>
-            <SkillsPreview />
-        </FadeIn>
+        <SkillsPreview />
         <FadeIn>
             <FeaturedProjects />
         </FadeIn>
