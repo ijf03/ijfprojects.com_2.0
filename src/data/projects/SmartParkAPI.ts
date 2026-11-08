@@ -98,8 +98,19 @@ export const smartPark = {
     "Locust workloads with response-content validation",
   ],
 
-  // Add a project image when screenshots or diagrams are available.
-  coverImage: "",
+  coverImage: "/images/projects/SmartPark/hero.png",
+
+  heroGallery: {
+    layout: "full-width",
+    items: [
+      {
+        type: "image",
+        src: "/images/projects/SmartPark/hero.png",
+        alt: "SmartPark operations monitor showing observed available spaces, configured car parks, active users, and logged requests",
+        caption: "The operations overview brings parking observations and current system activity into one dashboard.",
+      },
+    ],
+  },
 
   // Add the repository and live deployment here when they become public.
   links: [],
@@ -240,6 +251,27 @@ export const smartPark = {
       ],
       blocks: [
         {
+          type: "gallery",
+          gallery: {
+            layout: "full-width",
+            items: [
+              {
+                type: "image",
+                src: "/images/projects/SmartPark/carpark spaces available.png",
+                alt: "SmartPark availability grid showing ten analysed car parks with available-space counts, confidence values, search, and sorting controls",
+                caption: "Car-park observations show available spaces and detection confidence, with search, sorting, and grid or table views.",
+              },
+              {
+                type: "image",
+                src: "/images/projects/SmartPark/Smartpark website.png",
+                alt: "Full SmartPark dashboard before camera analysis, with ten unanalysed car parks and an empty request-activity list",
+                caption: "The complete dashboard in its initial state: unknown availability remains distinct from zero available spaces.",
+                aspectRatio: "portrait",
+              },
+            ],
+          },
+        },
+        {
           type: "text",
           paragraphs: [
             "Local Python memory was suitable for one process but could not provide a consistent view once the API scaled across multiple pods. I integrated Redis so every replica could access the same car-park observations, recent user activity, and operational request history.",
@@ -314,6 +346,20 @@ export const smartPark = {
       number: "06",
       title: "Observability, reliability, and security",
       blocks: [
+        {
+          type: "gallery",
+          gallery: {
+            layout: "full-width",
+            items: [
+              {
+                type: "image",
+                src: "/images/projects/SmartPark/request activity.png",
+                alt: "SmartPark request-activity panel listing the latest ten find-carparks API calls with demo user identifiers and local timestamps",
+                caption: "Recent API requests appear in the activity feed with user identifiers, endpoints, and local timestamps.",
+              },
+            ],
+          },
+        },
         {
           type: "text",
           paragraphs: [

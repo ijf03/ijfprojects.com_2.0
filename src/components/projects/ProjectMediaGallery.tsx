@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import ZoomableImage from "./ZoomableImage";
 import type {
   GalleryLayout,
   ProjectGallery,
@@ -213,10 +214,10 @@ function ProjectMediaGallery({
             >
               <div className="flex min-h-0 w-full flex-1 items-center justify-center">
                 {activeItem.type === "image" ? (
-                  <img
+                  <ZoomableImage
+                    key={activeItem.src}
                     src={activeItem.src}
                     alt={activeItem.alt}
-                    className="max-h-[82vh] max-w-full object-contain"
                   />
                 ) : (
                   <video

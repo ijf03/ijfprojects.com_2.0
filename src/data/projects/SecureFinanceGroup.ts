@@ -15,6 +15,7 @@ export const secureFinanceGroup = {
     "A responsive finance platform built with React, TypeScript, Express, Node.js, and MongoDB, with booking, CMS, blog, authentication, email, meeting, and administration workflows.",
 
   introduction: [
+    "The original Secure Finance Group website primarily introduced the business, its finance services, and contact information. Team 158 expanded that foundation into an integrated application supporting customer engagement, appointment booking, content management, and internal administration.",
     "Secure Finance Group is a full-stack business platform that combines a redesigned public finance website with customer enquiries, financial calculators, consultation booking, content management, blog publishing, mailing-list tools, meeting records, and a protected staff workspace.",
     "I led the frontend development and UI/UX design, created most public-facing interfaces and several internal workflows, established the reusable design system, and translated client requirements into practical product decisions. I also worked across the frontend-backend boundary by integrating APIs, supporting backend setup, investigating bugs, resolving integration issues, and helping refine the system through testing and client feedback.",
   ],
@@ -85,11 +86,11 @@ export const secureFinanceGroup = {
     "Responsive public finance and loan-information website",
     "Financial calculators and searchable FAQs",
     "Zoom and phone consultation booking",
-    "Email-based booking confirmation, rescheduling, and cancellation",
+    "Email-based booking confirmation, reminders, rescheduling, and cancellation",
     "Password and one-time email-code staff authentication",
     "Role-based broker and administrator workspaces",
     "Customer enquiry and contact management",
-    "Meeting transcripts, summaries, and booking links",
+    "AI-assisted meeting transcription, summarisation, and booking links",
     "Custom website content-management system",
     "Component-based blog editor with draft and publishing workflows",
     "Mailing-list confirmation, preferences, and unsubscribe workflows",
@@ -98,8 +99,25 @@ export const secureFinanceGroup = {
     "Responsive and accessible public and administration interfaces",
   ],
 
-  // Add the strongest public-site or dashboard screenshot when available.
-  coverImage: "",
+  coverImage: "/images/projects/sfg/new/CMS page.png",
+
+  heroGallery: {
+    "layout": "two-column",
+    "items": [
+      {
+        "type": "image",
+        "src": "/images/projects/sfg/sections/old-home-hero.png",
+        "alt": "Before: the original homepage navigation and opening banner.",
+        "caption": "Before: the original homepage navigation and opening banner."
+      },
+      {
+        "type": "image",
+        "src": "/images/projects/sfg/sections/new-home-hero.png",
+        "alt": "After: a personal introduction to the broker with a clear meeting-booking action.",
+        "caption": "After: a personal introduction to the broker with a clear meeting-booking action."
+      }
+    ]
+  },
 
   // Add the deployed website and repository when they are ready to share.
   links: [],
@@ -150,8 +168,66 @@ export const secureFinanceGroup = {
       ],
     },
     {
+      "id": "original-and-redesigned",
+      "number": "02",
+      "title": "From an informational website to an integrated platform",
+      "blocks": [
+        {
+          "type": "text",
+          "paragraphs": [
+            "The original website gave Secure Finance Group an online presence for explaining its services, introducing its broker, and receiving customer enquiries. Its loan guides, contact pages, and existing enquiry journey provided the starting point for the redesign.",
+            "Across two development iterations, Team 158 expanded that foundation with an appointment booking and reminder system, AI-assisted meeting transcription and summarisation, and chatbot functionality. A dedicated administrative dashboard was a significant addition, bringing bookings, website content, and other staff workflows into a central workspace.",
+            "The public-facing pages were also substantially restructured to improve navigation, responsiveness, accessibility, and visual consistency. The React and TypeScript frontend, supported by backend services, gave the team a flexible architecture for future features and integrations."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "A broader role for the website",
+          "text": "The redesign aimed to connect customer-facing services with internal business operations: helping customers take the next step while giving staff tools to manage appointments, content, and follow-up work."
+        },
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "three-column",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-broker-profile.png",
+                "alt": "Original site: the broker profile, business information, and get-started action.",
+                "caption": "Original site: the broker profile, business information, and get-started action."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-loan-introduction.png",
+                "alt": "Original site: first-home-loan introduction and imagery.",
+                "caption": "Original site: first-home-loan introduction and imagery."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-loan-process.png",
+                "alt": "Original site: the complete six-step loan process.",
+                "caption": "Original site: the complete six-step loan process."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-loan-calculators.png",
+                "alt": "Original site: borrowing-power and stamp-duty calculator links.",
+                "caption": "Original site: borrowing-power and stamp-duty calculator links."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/old/contact us home-loan-recommendations-.png",
+                "alt": "Original get-started journey offering home buying, investment property, and refinancing options",
+                "caption": "Original site: the existing get-started enquiry journey."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       id: "requirements-and-design",
-      number: "02",
+      number: "03",
       title: "Turning client needs into product decisions",
       details: [
         {
@@ -182,7 +258,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "public-experience",
-      number: "03",
+      number: "04",
       title: "Public customer experience",
       details: [
         {
@@ -196,6 +272,70 @@ export const secureFinanceGroup = {
         },
       ],
       blocks: [
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "two-column",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-contact-introduction.png",
+                "alt": "Before: broker availability and contact options.",
+                "caption": "Before: broker availability and contact options."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-contact-form.png",
+                "alt": "Before: the original contact enquiry form.",
+                "caption": "Before: the original contact enquiry form."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-contact-introduction.png",
+                "alt": "After: a clearer introduction to contact and booking options.",
+                "caption": "After: a clearer introduction to contact and booking options."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-contact-form.png",
+                "alt": "After: the complete labelled enquiry form with supporting guidance.",
+                "caption": "After: the complete labelled enquiry form with supporting guidance."
+              }
+            ]
+          }
+        },
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "single",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-investment-introduction.png",
+                "alt": "Redesigned investment-loans introduction and property-planning card.",
+                "caption": "Redesigned investment-loans introduction and property-planning card."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-investment-guidance.png",
+                "alt": "Investment guidance organised around goals, budget, lending options, and future plans.",
+                "caption": "Investment guidance organised around goals, budget, lending options, and future plans."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-investment-process.png",
+                "alt": "The complete four-step investment-loan process.",
+                "caption": "The complete four-step investment-loan process."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-investment-faq.png",
+                "alt": "Investment-loan FAQs and supporting information.",
+                "caption": "Investment-loan FAQs and supporting information."
+              }
+            ]
+          }
+        },
         {
           type: "text",
           paragraphs: [
@@ -222,7 +362,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "mern-architecture",
-      number: "04",
+      number: "05",
       title: "MERN architecture and API integration",
       details: [
         {
@@ -268,7 +408,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "booking-and-integrations",
-      number: "05",
+      number: "06",
       title: "Booking and third-party service workflows",
       details: [
         {
@@ -283,6 +423,32 @@ export const secureFinanceGroup = {
         },
       ],
       blocks: [
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "two-column",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-home-enquiry.png",
+                "alt": "Original homepage: customers could send an enquiry through a general form.",
+                "caption": "Original homepage: customers could send an enquiry through a general form."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-home-booking.png",
+                "alt": "Redesigned homepage: a direct call to book a Zoom or phone conversation.",
+                "caption": "Redesigned homepage: a direct call to book a Zoom or phone conversation."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-contact-booking.png",
+                "alt": "Redesigned contact page: reassurance and a meeting-booking action.",
+                "caption": "Redesigned contact page: reassurance and a meeting-booking action."
+              }
+            ]
+          }
+        },
         {
           type: "text",
           paragraphs: [
@@ -299,7 +465,7 @@ export const secureFinanceGroup = {
             "Date and time availability",
             "Customer details and validation",
             "Zoom or phone consultation support",
-            "Confirmation email delivery",
+            "Confirmation emails and appointment reminders",
             "Secure customer management links",
             "Rescheduling and cancellation",
             "Staff booking search and filtering",
@@ -311,7 +477,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "content-platform",
-      number: "06",
+      number: "07",
       title: "CMS and modular blog experience",
       details: [
         {
@@ -324,6 +490,34 @@ export const secureFinanceGroup = {
         },
       ],
       blocks: [
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "two-column",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-home-faq-blog.png",
+                "alt": "Original homepage: FAQ and blog content presented as public information.",
+                "caption": "Original homepage: FAQ and blog content presented as public information."
+              }
+            ]
+          }
+        },
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "full-width",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/new/CMS page.png",
+                "alt": "Secure Finance Group CMS with page navigation, editable content fields, live preview, reset controls, and a save button",
+                "caption": "New capability: staff can edit website content alongside a live preview and restore original values."
+              }
+            ]
+          }
+        },
         {
           type: "text",
           paragraphs: [
@@ -351,7 +545,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "staff-workspace",
-      number: "07",
+      number: "08",
       title: "Role-based staff workspace",
       details: [
         {
@@ -364,6 +558,26 @@ export const secureFinanceGroup = {
         },
       ],
       blocks: [
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "full-width",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-admin-overview.png",
+                "alt": "New capability: the administration overview, booking counts, schedule, and follow-up status.",
+                "caption": "New capability: the administration overview, booking counts, schedule, and follow-up status."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-admin-workspace.png",
+                "alt": "New capability: staff shortcuts to bookings, enquiries, meetings, users, mailing lists, and blogs.",
+                "caption": "New capability: staff shortcuts to bookings, enquiries, meetings, users, mailing lists, and blogs."
+              }
+            ]
+          }
+        },
         {
           type: "text",
           paragraphs: [
@@ -390,7 +604,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "design-system",
-      number: "08",
+      number: "09",
       title: "Reusable frontend and responsive design",
       details: [
         {
@@ -404,6 +618,44 @@ export const secureFinanceGroup = {
         },
       ],
       blocks: [
+        {
+          "type": "gallery",
+          "gallery": {
+            "layout": "two-column",
+            "items": [
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-home-services.png",
+                "alt": "Before: separate homepage service cards.",
+                "caption": "Before: separate homepage service cards."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-home-services.png",
+                "alt": "After: service pathways grouped around customer goals.",
+                "caption": "After: service pathways grouped around customer goals."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/old-home-process.png",
+                "alt": "Before: a four-step overview of the broker relationship.",
+                "caption": "Before: a four-step overview of the broker relationship."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-home-process.png",
+                "alt": "After: a simplified conversation, options, and next-steps sequence.",
+                "caption": "After: a simplified conversation, options, and next-steps sequence."
+              },
+              {
+                "type": "image",
+                "src": "/images/projects/sfg/sections/new-home-introduction.png",
+                "alt": "A consistent editorial layout pairs personal guidance with broker photography.",
+                "caption": "A consistent editorial layout pairs personal guidance with broker photography."
+              }
+            ]
+          }
+        },
         {
           type: "text",
           paragraphs: [
@@ -431,7 +683,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "debugging-and-quality",
-      number: "09",
+      number: "10",
       title: "Debugging, integration, and quality assurance",
       details: [
         {
@@ -472,7 +724,7 @@ export const secureFinanceGroup = {
     },
     {
       id: "outcome",
-      number: "10",
+      number: "11",
       title: "Outcome",
       blocks: [
         {

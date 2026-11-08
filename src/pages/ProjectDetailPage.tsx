@@ -1,3 +1,4 @@
+import NotFoundPage from "./NotFoundPage";
 import { flattenTechStack } from "../data/technologyCategories";
 import { Link, useParams } from "react-router-dom";
 import { getProjectBySlug } from "../data/projects";
@@ -10,22 +11,7 @@ function ProjectDetailPage() {
   const project = getProjectBySlug(slug ?? "");
 
   if (!project) {
-    return (
-      <section className="py-8">
-        <p className="text-brand text-sm uppercase tracking-[0.3em]">
-          Error
-        </p>
-
-        <h1 className="mt-4 text-3xl font-bold">Project not found.</h1>
-
-        <Link
-          to="/projects"
-          className="text-brand mt-6 inline-block font-semibold hover:underline"
-        >
-          Return to projects
-        </Link>
-      </section>
-    );
+    return <NotFoundPage project />;
   }
 
   return (

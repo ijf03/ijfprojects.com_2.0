@@ -14,14 +14,13 @@ export { todoList } from "./todoList";
 
 export const projects: Project[] = [
   movingHouse247,
+  cifar10,
+  smartPark,
+  secureFinanceGroup,
   // bubbleTeaStore,
   // esportsPortfolio,
   todoList,
   nutricoach,
-  cifar10,
-  smartPark,
-  secureFinanceGroup,
-
 ];
 
 export const featuredProjects = projects.filter(
