@@ -1,4 +1,4 @@
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import { homeContent } from "../../data/home";
@@ -10,33 +10,22 @@ if (import.meta.env.DEV) {
   if (conflicts.length) console.warn(`Technologies assigned to multiple categories: ${conflicts.join(", ")}`);
 }
 
-const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-};
-
 function SkillsPreview() {
+  const reduceMotion = useReducedMotion();
   const { skillsPreview } = homeContent;
   const visibleGroups = getTechnicalSkillGroups(projects);
 
   return (
-    <section className="border-default border-t py-20">
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.35 }}
-      >
+    <section className="border-default border-t py-12 sm:py-20">
+      {/* The stacked mobile section can be taller than the viewport. Keep its
+          content visible without relying on a section-wide scroll threshold. */}
+      <div>
         <p className="text-brand text-sm uppercase tracking-[0.3em]">
           {skillsPreview.eyebrow}
         </p>
 
         <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">
+          <h2 className="max-w-2xl text-2xl font-bold sm:text-4xl">
             {skillsPreview.heading}
           </h2>
 
@@ -46,16 +35,16 @@ function SkillsPreview() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-6 grid gap-3 sm:mt-10 sm:gap-5 md:grid-cols-3">
           {visibleGroups.map((group, index) => (
             <motion.article
               key={group.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-4xl border border-default bg-surface/70 p-6 shadow-xl backdrop-blur-xl"
+              initial={reduceMotion ? false : { y: 24 }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true, amount: "some" }}
+              transition={{ duration: 0.5 }}
+              whileHover={reduceMotion ? undefined : { y: -8 }}
+              className="group relative overflow-hidden rounded-2xl border border-default bg-surface/70 p-4 shadow-xl backdrop-blur-xl sm:rounded-4xl sm:p-6"
             >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
@@ -63,18 +52,18 @@ function SkillsPreview() {
               </div>
 
               <div className="relative">
-                <div className="mb-8 flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.25em] text-muted">
+                <div className="mb-4 flex items-start justify-between gap-3 sm:mb-8 sm:gap-4">
+                  <div className="flex min-h-9 items-center gap-3 sm:block sm:min-h-0">
+                    <p className="shrink-0 text-xs uppercase tracking-[0.25em] text-muted">
                       0 {index + 1}
                     </p>
 
-                    <h3 className="mt-3 text-2xl font-semibold text-primary">
+                    <h3 className="text-lg font-semibold text-primary sm:mt-3 sm:text-2xl">
                       {group.title}
                     </h3>
                   </div>
 
-                  <div className="rounded-full border border-default bg-background/50 p-2 text-brand transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <div className="shrink-0 rounded-full border border-default bg-background/50 p-2 text-brand transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                     <Cpu size={18} />
                   </div>
                 </div>
@@ -94,7 +83,7 @@ function SkillsPreview() {
             </motion.article>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

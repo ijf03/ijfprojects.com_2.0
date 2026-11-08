@@ -3,6 +3,7 @@ import { Search, X } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import { matchesProjectSearch } from "../data/projectSearch";
+import { sortProjectsByDate, type ProjectSortOrder } from "../data/projectSort";
 import ProjectCard from "../components/projects/ProjectCard";
 
 function ProjectsPage() {
@@ -10,8 +11,12 @@ function ProjectsPage() {
   const initialSearch = searchParams.get("search") ?? "";
   const [isSearchOpen, setIsSearchOpen] = useState(initialSearch.length > 0);
   const [search, setSearch] = useState(initialSearch);
+  const [sortOrder, setSortOrder] = useState<ProjectSortOrder>("newest");
 
-  const filteredProjects = projects.filter((project) => matchesProjectSearch(project, search));
+  const filteredProjects = sortProjectsByDate(
+    projects.filter((project) => matchesProjectSearch(project, search)),
+    sortOrder,
+  );
 
   function toggleSearch() {
     setIsSearchOpen((current) => !current);
@@ -69,6 +74,20 @@ function ProjectsPage() {
         A collection of development, UI/UX, business systems, game development,
         and creative technology projects.
       </p>
+
+      <div className="mt-8 flex justify-end">
+        <label className="flex items-center gap-3 text-sm text-secondary">
+          Sort by date
+          <select
+            value={sortOrder}
+            onChange={(event) => setSortOrder(event.target.value as ProjectSortOrder)}
+            className="min-h-11 rounded-full border border-default bg-surface px-4 py-2 text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          >
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </label>
+      </div>
 
       {search.trim() && (
         <div className="mt-8 flex items-center justify-between gap-4 text-sm">
