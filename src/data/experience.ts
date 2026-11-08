@@ -2,106 +2,99 @@ import type { Experience } from "../types/experience";
 
 export const experiences: Experience[] = [
   {
-    role: "Coding & Mathematics Coach",
-    organisation: "Skills Samurai Elsternwick; Skills Samurai Mount Glen",
-    period: "2025 - Present",
-    type: "Work",
-    description:
-      "Coach students aged 6 to 16 in coding, game development, mathematics, and STEM-based projects.",
-    highlights: [
-      "Teach programming concepts through Scratch, Python, Java, and Lua",
-      "Support students in coding, robotics, and 3D modelling projects",
-      "Run holiday camps focused on technology, science, and creative problem-solving",
+    "role": "Machine Learning Intern",
+    "organisation": "Silverpond",
+    "period": "2026 - Present",
+    "type": "Work",
+    "description": "Evaluate computer-vision models and investigate datasets, annotations, and machine-learning workflows for industrial applications in Melbourne CBD.",
+    "highlights": [
+      "Evaluated industrial pallet object-detection predictions against ground-truth bounding boxes, investigating prediction mismatches, annotation errors, and incorrect labels that distorted model assessment",
+      "Reviewed vision-language model (VLM) hazard classifications and documented discrepancies between output categories and ground-truth labels",
+      "Analysed optical-flow motion graphs from poultry video across activity levels, age groups, and recording scenarios to assess how well motion signals represented observed behaviour",
+      "Prepared for a Detectron2 training workflow by reviewing Python code, training metadata, dataset schemas, and class-index mappings; investigated MLflow and ClearML workflows before dataset access was available"
     ],
-    skills: [
+    "skills": [
       "Python",
-      "Scratch",
+      "Computer Vision",
+      "Object Detection Evaluation",
+      "Optical Flow",
+      "Detectron2",
+      "MLflow",
+      "ClearML"
+    ]
+  },
+  {
+    "role": "Coding and Maths Coach",
+    "organisation": "Skills Samurai",
+    "period": "2025 - Present",
+    "type": "Work",
+    "description": "Teach coding and maths to students aged 6 to 16 in Elsternwick and Glen Waverley.",
+    "highlights": [
+      "Teach Python, Java, Scratch, and Lua, adapting technical explanations and hands-on exercises to different learning levels",
+      "Communicate student progress with parents and troubleshoot classroom computers, software, networking, and 3D printers"
+    ],
+    "skills": [
+      "Python",
       "Java",
+      "Scratch",
       "Lua",
-      "Tinkercad",
       "Teaching",
       "Communication",
-    ],
+      "Technical Troubleshooting"
+    ]
   },
   {
-    role: "Founder; Cultural Affairs Officer",
-    organisation: "Filipino Association of Monash",
-    period: "2025 - 2026",
-    type: "Leadership",
-    description:
-      "Helped establish a student organisation that connects Filipino students at Monash University and promotes culture, belonging, and community.",
-    highlights: [
-      "Organise cultural, social, and community-focused events",
-      "Collaborate with student organisations and external partners",
-      "Support initiatives that strengthen connection among Filipino students",
+    "role": "Co-CEO / Technology Organisation Leader",
+    "organisation": "Monash Nexus for Emerging Technologies (MNET)",
+    "period": "2024 - 2025",
+    "type": "Leadership",
+    "description": "Co-led an emerging-technology organisation of more than 80 members in Clayton, coordinating multidisciplinary teams and industry engagement.",
+    "highlights": [
+      "Co-led an 80+ member organisation, coordinating technical events, multidisciplinary teams, and engagement with industry contacts",
+      "Contributed to website design and development, including UI/UX design and frontend implementation using component-based architecture",
+      "Organised technology events and workshops connecting students with industry partners",
+      "Contributed to team rebranding, improving visibility and engagement across platforms"
     ],
-    skills: [
-      "Community Building",
-      "Event Planning",
-      "Partnerships",
+    "skills": [
       "Leadership",
-    ],
-  },
-  {
-    role: "Co CEO / Team Lead; Marketing Department Lead",
-    organisation: "Monash Nexus for Emerging Technologies",
-    period: "2024 - 2026",
-    type: "Leadership",
-    description:
-      "Led a student technology team focused on emerging technology, immersive media, digital twins, and interactive experiences.",
-    highlights: [
-      "Supported the team's rebrand, identity, structure, and growth",
-      "Organised technology events, showcases, workshops, and industry-facing activities",
-      "Contributed across operations, marketing, education, and project coordination",
-      "Created 3D modelling guides for internal and external workshops",
-    ],
-    skills: [
-      "Leadership",
-      "Emerging Technology",
-      "Event Planning",
       "Team Management",
-      "Marketing",
-      "3D Modelling",
-    ],
+      "UI/UX Design",
+      "Frontend Development",
+      "Event Planning",
+      "Industry Engagement"
+    ]
   },
   {
-    role: "Esports Commentator and Events Host",
-    organisation: "Freelance / Tier One Entertainment",
-    period: "2021 - Present",
-    type: "Freelance",
-    description:
-      "Host and commentate esports events across online and onsite productions.",
-    highlights: [
-      "Commentated games including Call of Duty Mobile and Valorant",
-      "Hosted events, interviews, livestreams, and branded productions",
-      "Worked with organisations including Tier One Entertainment, Garena, ESL, Dubai Police, and Four04 Esports",
+    "role": "Esports Commentator and Event Host",
+    "organisation": "Ardent (Tier One) and Freelance",
+    "period": "2021 - 2024",
+    "type": "Freelance",
+    "description": "Delivered analytical live commentary and hosted esports events for live audiences.",
+    "highlights": [
+      "Delivered analytical live commentary at 40+ esports events, including 15+ international events",
+      "Translated complex, fast-changing scenarios for live audiences"
     ],
-    skills: [
+    "skills": [
       "Public Speaking",
       "Hosting",
       "Commentary",
-      "Interviewing",
-      "Content Creation",
-    ],
+      "Communication"
+    ]
   },
   {
-    role: "Head of Organisation",
-    organisation: "Dovahkiin Esports",
-    period: "2022 - 2023",
-    type: "Community",
-    description:
-      "Managed an esports community of more than 200 members, including administrators, content creators, teams, and players.",
-    highlights: [
-      "Organised tournaments, community events, and player activities",
-      "Developed strategies to improve community growth and engagement",
-      "Worked with sponsors and partners to support the organisation",
+    "role": "Founder / Cultural Affairs Officer",
+    "organisation": "Filipino Association Monash",
+    "period": "2025 - 2026",
+    "type": "Leadership",
+    "description": "Helped establish a student organisation and support its community.",
+    "highlights": [
+      "Helped establish the student organisation and coordinate events and community engagement"
     ],
-    skills: [
-      "Community Management",
-      "Team Leadership",
-      "Event Production",
-      "Partnerships",
-    ],
-    link: "https://www.facebook.com/DovahkiinEsports",
-  },
+    "skills": [
+      "Community Building",
+      "Event Planning",
+      "Leadership",
+      "Communication"
+    ]
+  }
 ];

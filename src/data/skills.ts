@@ -2,50 +2,77 @@ import type { SkillGroup } from "../types/skill";
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend",
-    skills: [
-      "React",
+    "title": "Languages",
+    "skills": [
+      "Python",
       "TypeScript",
       "JavaScript",
+      "Java",
+      "SQL",
+      "PHP",
+      "C++",
+      "Swift",
+      "Kotlin"
+    ]
+  },
+  {
+    "title": "Frameworks and Development",
+    "skills": [
+      "React",
+      "Angular",
+      "Node.js",
+      "Express.js",
+      "CakePHP",
+      "SwiftUI",
+      "FastAPI",
       "HTML",
       "CSS",
       "Tailwind CSS",
       "Bootstrap",
-      "Vite",
-    ],
+      "REST APIs"
+    ]
   },
   {
-    title: "Backend and APIs",
-    skills: ["Node.js", "Express", "REST APIs", "Authentication", "JWT"],
+    "title": "Databases and Infrastructure",
+    "skills": [
+      "MySQL",
+      "SQLite",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "Git",
+      "GitHub",
+      "Linux",
+      "Nix",
+      "Google Cloud",
+      "Google Kubernetes Engine",
+      "AWS Fundamentals"
+    ]
   },
   {
-    title: "Languages",
-    skills: ["Java", "Python", "Kotlin", "C++", "Lua"],
+    "title": "AI and Computer Vision",
+    "skills": [
+      "PyTorch",
+      "Detectron2",
+      "Object Detection Evaluation",
+      "Bounding-box Analysis",
+      "Optical Flow",
+      "Video Evaluation",
+      "MLflow",
+      "ClearML"
+    ]
   },
   {
-    title: "Databases",
-    skills: ["MongoDB", "SQL"],
-  },
-  {
-    title: "Game and Creative Technology",
-    skills: [
-      "Unreal Engine",
-      "Three.js",
-      "Maya",
-      "Tinkercad",
-      "Arduino",
+    "title": "Tools and Practices",
+    "skills": [
+      "Postman",
+      "VS Code",
+      "Xcode",
+      "Android Studio",
       "Figma",
-    ],
-  },
-  {
-    title: "Professional Skills",
-    skills: [
+      "Agile",
       "UI/UX Design",
-      "Leadership",
-      "Communication",
-      "Teaching",
-      "Event Planning",
-      "Community Management",
-    ],
-  },
+      "Technical Troubleshooting"
+    ]
+  }
 ];
