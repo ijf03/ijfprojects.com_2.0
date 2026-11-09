@@ -99,7 +99,7 @@ export const secureFinanceGroup = {
     "Responsive and accessible public and administration interfaces",
   ],
 
-  coverImage: "/images/projects/sfg/new/CMS page.png",
+  coverImage: "/images/projects/sfg/sections/new-home-hero.png",
 
   heroGallery: {
     "layout": "two-column",

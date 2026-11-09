@@ -6,7 +6,7 @@ export const esportsPortfolio = {
   tagline: "A personal platform for gaming, hosting, and commentary work.",
   type: "Frontend Website",
   year: "2024",
-  featured: true,
+  featured: false,
   status: "Completed",
 
   shortDescription:

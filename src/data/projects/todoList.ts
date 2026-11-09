@@ -6,7 +6,7 @@ export const todoList = {
   tagline: "A typed React application for straightforward task management.",
   type: "Frontend App",
   year: "2024",
-  featured: true,
+  featured: false,
   status: "Completed",
 
   shortDescription:

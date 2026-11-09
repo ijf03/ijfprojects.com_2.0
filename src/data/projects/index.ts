@@ -6,19 +6,18 @@ import { nutricoach } from "./NutriCoach";
 import { cifar10 } from "./cifar10";
 import { smartPark } from "./SmartParkAPI";
 import { secureFinanceGroup } from "./SecureFinanceGroup";
-
-export { bubbleTeaStore } from "./bubbleTeaStore";
-export { esportsPortfolio } from "./esportsPortfolio";
-export { movingHouse247 } from "./movingHouse247";
-export { todoList } from "./todoList";
+import { aussieEcoGuard } from "./aussieEcoGuard";
+import { bubbleTeaStore } from "./bubbleTeaStore";
+import { esportsPortfolio } from "./esportsPortfolio";
 
 export const projects: Project[] = [
-  movingHouse247,
+  secureFinanceGroup,
   cifar10,
   smartPark,
-  secureFinanceGroup,
-  // bubbleTeaStore,
-  // esportsPortfolio,
+  aussieEcoGuard,
+  movingHouse247,
+  bubbleTeaStore,
+  esportsPortfolio,
   todoList,
   nutricoach,
 ];
