@@ -5,7 +5,7 @@ export const bubbleTeaStore = {
   title: "Bubble Tea E-Commerce Website",
   tagline: "A complete MERN shopping experience for browsing and managing products.",
   type: "Full-stack Web App",
-  year: "2024",
+  year: "2023",
   featured: false,
   status: "Completed",
 

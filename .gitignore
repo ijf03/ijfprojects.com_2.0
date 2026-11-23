@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Original screenshots containing personal account details
+tmp/private-recipe-hub/

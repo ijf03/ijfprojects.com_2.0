@@ -84,6 +84,28 @@ function ProjectBlockRenderer({
     case "gallery":
       return <ProjectMediaGallery gallery={block.gallery} />;
 
+    case "youtube":
+      return (
+        <figure>
+          <div className="border-default aspect-video overflow-hidden rounded-2xl border bg-black">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(block.videoId)}`}
+              title={block.title}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="h-full w-full border-0"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="text-secondary mt-3 text-sm leading-6">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
     case "list":
       return (
         <div>

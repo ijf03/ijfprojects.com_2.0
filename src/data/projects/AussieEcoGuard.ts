@@ -70,19 +70,40 @@ export const aussieEcoGuard = {
     "Cloud Integration",
   ],
   techStack: {
-    backend: ["Node.js", "AWS Lambda", "Amazon API Gateway"],
-    languages: ["TypeScript", "SQL"],
-    databases: ["SQLite (local)", "Google Cloud Firestore (deployed)"],
-    frontend: ["React", "TypeScript", "Firebase Hosting"],
-    integrations: [
-      "YOLO11n ONNX",
-      "Amazon Cognito",
-      "Amazon S3",
-      "Amazon SNS",
-      "Dialogflow ES",
-      "Workload Identity Federation",
-    ],
-  },
+  "languages": [
+    "TypeScript",
+    "Python",
+    "SQL"
+  ],
+  "backend": [
+    "Node.js"
+  ],
+  "frontend": [
+    "React",
+    "Vite"
+  ],
+  "databases": [
+    "SQLite",
+    "Cloud Firestore"
+  ],
+  "machineLearning": [
+    "Ultralytics YOLO",
+    "ONNX"
+  ],
+  "devops": [
+    "AWS Lambda",
+    "Amazon S3",
+    "AWS API Gateway",
+    "Firebase Hosting"
+  ],
+  "integrations": [
+    "AWS Cognito",
+    "Amazon SNS",
+    "Dialogflow ES",
+    "FFmpeg",
+    "Pillow"
+  ]
+},
 
   features: [
     "Email-verified registration and sign-in; the app opens at authentication rather than a public homepage",
@@ -137,9 +158,41 @@ export const aussieEcoGuard = {
 
   // Add the live URL using your portfolio's ProjectLink type if supported.
   // https://fit3184-g80-ecoguard-dg26.web.app
-  links: [],
+  links: [
+  {
+    "label": "View source on GitHub",
+    "href": "https://github.com/ijf03/ecoguard",
+    "type": "github"
+  }
+],
 
   sections: [
+{
+  "id": "local-architecture",
+  "title": "The local backend I built",
+  "blocks": [
+    {
+      "type": "text",
+      "paragraphs": [
+        "The HTTP server delegates media operations to MediaService. Repository and storage contracts separate domain logic from SQLite and the local filesystem, with in-memory implementations used in tests.",
+        "Uploads validate file type and image decoding before recording metadata. SHA-256 hashes detect duplicate bytes, and serialised local mutations make deduplication deterministic within one process. This local adapter is distinct from the deployed Lambda architecture."
+      ]
+    }
+  ]
+},
+{
+  "id": "processing",
+  "title": "Handling failed and expensive processing",
+  "blocks": [
+    {
+      "type": "text",
+      "paragraphs": [
+        "Python workers provide image decoding, thumbnails and detection. Failed detection leaves media retryable instead of pretending processing succeeded. My regression work explicitly rejects uploads when required decoding dependencies are unavailable.",
+        "The video processor validates MP4/H.264 input, samples bounded frames with FFmpeg and combines per-species maximum counts. These counts represent observations in sampled frames, not the number of unique animals across a video."
+      ]
+    }
+  ]
+},
     {
       id: "project-context",
       number: "01",
@@ -368,4 +421,5 @@ export const aussieEcoGuard = {
       ],
     },
   ],
+  deploymentStatus: "Cloud application; availability depends on supporting services",
 } satisfies Project;

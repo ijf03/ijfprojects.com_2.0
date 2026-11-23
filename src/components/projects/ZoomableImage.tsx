@@ -14,13 +14,16 @@ export default function ZoomableImage({ src, alt }: ZoomableImageProps) {
     const element = viewportRef.current;
     if (!element) return;
     const observer = new ResizeObserver(() => {
-      setViewport({ width: element.clientWidth, height: element.clientHeight });
+      const width = element.clientWidth;
+      const height = element.clientHeight;
+      setViewport(previous => previous.width === width && previous.height === height
+        ? previous : { width, height });
     });
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
 
-  const fit = natural.width && viewport.width
+  const fit = natural.width && natural.height && viewport.width && viewport.height
     ? Math.min(viewport.width / natural.width, viewport.height / natural.height, 1)
     : 1;
   const maxZoom = Math.max(8, 1 / fit);
@@ -51,10 +54,10 @@ export default function ZoomableImage({ src, alt }: ZoomableImageProps) {
     <div
       className="w-full min-w-0"
       onKeyDown={(event) => {
-        if (["+", "=", "-", "0"].includes(event.key)) {
+        if (["+", "=", "-"].includes(event.key)) {
           event.preventDefault();
           event.stopPropagation();
-          changeZoom(event.key === "0" ? 1 : zoom * (event.key === "-" ? 1 / 1.5 : 1.5));
+          changeZoom(zoom * (event.key === "-" ? 1 / 1.5 : 1.5));
         }
         // Arrow keys pan a zoomed image instead of navigating to another image.
         if (zoom > 1 && event.key.startsWith("Arrow")) event.stopPropagation();
@@ -64,17 +67,16 @@ export default function ZoomableImage({ src, alt }: ZoomableImageProps) {
         <button type="button" className={buttonClass} aria-label="Zoom out" disabled={zoom <= 1} onClick={() => changeZoom(zoom / 1.5)}>−</button>
         <output className="min-w-16 text-center text-sm text-white" aria-live="polite">{Math.round(zoom * 100)}%</output>
         <button type="button" className={buttonClass} aria-label="Zoom in" disabled={zoom >= maxZoom} onClick={() => changeZoom(zoom * 1.5)}>+</button>
-        <button type="button" className={buttonClass} onClick={() => changeZoom(1)}>Fit</button>
-        <button type="button" className={buttonClass} disabled={!natural.width} onClick={() => changeZoom(1 / fit)}>Actual size</button>
-        <a className={`${buttonClass} inline-flex items-center`} href={src} target="_blank" rel="noreferrer">Open original</a>
       </div>
       <div
         ref={viewportRef}
         tabIndex={0}
         role="region"
-        aria-label="Image detail. Use plus and minus to zoom, zero to fit. Scroll or drag to explore."
-        className={`h-[62dvh] w-full overflow-auto overscroll-contain rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:h-[70dvh] ${zoom > 1 ? "cursor-grab active:cursor-grabbing" : "cursor-zoom-in"}`}
-        onDoubleClick={() => changeZoom(zoom > 1 ? 1 : 2)}
+        aria-label="Image detail. Use plus and minus to zoom. Scroll or drag to explore."
+        // Hidden scrollbar tracks keep the viewport dimensions stable while
+        // preserving native wheel, keyboard and touch scrolling.
+        className={`image-viewer-viewport h-[62dvh] w-full overflow-auto overscroll-contain rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:h-[70dvh] ${zoom > 1 ? "cursor-grab active:cursor-grabbing" : "cursor-zoom-in"}`}
+        onDoubleClick={() => changeZoom(zoom * 1.5)}
         onPointerDown={(event) => {
           // Touch keeps native scrolling and browser pinch zoom.
           if (zoom <= 1 || event.pointerType !== "mouse" || event.button !== 0) return;
@@ -107,7 +109,7 @@ export default function ZoomableImage({ src, alt }: ZoomableImageProps) {
           />
         </div>
       </div>
-      <p className="mt-2 text-center text-xs text-white/60">Zoom with + / − or double-click. Scroll, swipe, or drag to explore. 100% fits the image.</p>
+      <p className="mt-2 text-center text-xs text-white/60">Zoom with + / − or double-click to zoom in. Scroll, swipe, or drag to explore.</p>
     </div>
   );
 }

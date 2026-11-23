@@ -24,7 +24,7 @@ function ProjectsPage() {
 
   return (
     <section aria-labelledby="projects-heading" className="py-8">
-      <div className="flex items-start justify-between gap-6">
+      <div className="flex flex-col items-start justify-between gap-6 sm:flex-row">
         <div>
           <p className="text-brand text-sm uppercase tracking-[0.3em]">
             Projects
@@ -48,7 +48,7 @@ function ProjectsPage() {
                 onChange={(event) => setSearch(event.target.value)}
                 placeholder="Search..."
                 autoFocus
-                className="border-default/60 bg-surface/60 text-primary placeholder:text-muted w-32 rounded-full border px-3 py-1 text-sm outline-none transition focus:border-default/60 focus:ring-0 sm:w-48"
+                className="border-default bg-surface text-primary placeholder:text-secondary min-h-11 w-48 rounded-full border px-3 py-1 text-sm transition focus-visible:outline-2 focus-visible:outline-brand"
               />
             </label>
           )}

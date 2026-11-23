@@ -86,13 +86,21 @@ export interface LinksBlock {
   links: ProjectLink[];
 }
 
+export interface YouTubeBlock {
+  type: "youtube";
+  videoId: string;
+  title: string;
+  caption?: string;
+}
+
 export type ProjectContentBlock =
   | TextBlock
   | GalleryBlock
   | ListBlock
   | CalloutBlock
   | QuoteBlock
-  | LinksBlock;
+  | LinksBlock
+  | YouTubeBlock;
 
 export interface ProjectSection {
   id: string;
@@ -120,9 +128,12 @@ export interface Project {
   tagline: string;
   type: string;
   year: string;
+  /** Optional sorting/display date: YYYY, YYYY-MM, YYYY-MM-DD or Month YYYY. Falls back to year. */
   completedDate?: string;
   featured: boolean;
   status?: ProjectStatus;
+  /** Availability is independent of development status. Omit when unknown. */
+  deploymentStatus?: string;
 
   shortDescription: string;
   introduction: string[];
@@ -140,7 +151,8 @@ export interface Project {
   techStack: ProjectTechStack;
   features: string[];
 
-  coverImage: string;
+  /** Omit to render a branded title cover instead of a screenshot. */
+  coverImage?: string;
 
   /**
    * Displayed near the project header, before the main case-study sections.

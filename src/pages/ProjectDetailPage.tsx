@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { getProjectBySlug } from "../data/projects";
 import ProjectMediaGallery from "../components/projects/ProjectMediaGallery";
 import ProjectSectionRenderer from "../components/projects/ProjectSectionRenderer";
+import ProjectCover from "../components/projects/ProjectCover";
 
 function ProjectDetailPage() {
   const { slug } = useParams();
@@ -30,8 +31,8 @@ function ProjectDetailPage() {
         </p>
 
         <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h1 className="max-w-4xl text-4xl font-bold sm:text-5xl lg:text-6xl">
+          <div className="min-w-0">
+            <h1 className="max-w-4xl break-words text-4xl font-bold sm:text-5xl lg:text-6xl">
               {project.title}
             </h1>
 
@@ -53,6 +54,9 @@ function ProjectDetailPage() {
         </div>
 
         {/* External links */}
+        {project.deploymentStatus && (
+          <p className="text-secondary mt-8 text-sm">{project.deploymentStatus}</p>
+        )}
         {project.links.length > 0 && (
           <div className="mt-8 flex flex-wrap gap-4">
             {project.links.map((link, index) => (
@@ -75,11 +79,15 @@ function ProjectDetailPage() {
       </header>
 
       {/* Top project gallery */}
-      {project.heroGallery && (
+      {project.heroGallery && project.heroGallery.items.length > 0 ? (
         <div className="mt-12">
           <ProjectMediaGallery gallery={project.heroGallery} />
         </div>
-      )}
+      ) : !project.coverImage ? (
+        <div className="mt-12 max-w-xl">
+          <ProjectCover project={project} />
+        </div>
+      ) : null}
 
       {/* Project summary */}
       <section className="border-default mt-16 border-y py-10">

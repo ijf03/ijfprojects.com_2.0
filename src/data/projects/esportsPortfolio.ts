@@ -38,14 +38,14 @@ export const esportsPortfolio = {
     "Contact and social links",
   ],
 
-  coverImage: "/images/projects/WG.png",
+  coverImage: "/images/projects/esports-portfolio/wasabi gaming.png",
 
   heroGallery: {
     layout: "full-width",
     items: [
       {
         type: "image",
-        src: "/images/projects/WG.png",
+        src: "/images/projects/esports-portfolio/WG.png",
         alt: "Wasabi Gaming esports portfolio homepage",
         caption: "Main esports portfolio interface",
         aspectRatio: "wide",
@@ -61,7 +61,7 @@ export const esportsPortfolio = {
     },
     {
       label: "View live project",
-      href: "https://wasabigaming03.com/",
+      href: "https://ijf03.github.io/WG/",
       type: "live",
     },
   ],
